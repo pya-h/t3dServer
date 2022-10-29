@@ -1,0 +1,1824 @@
+Mon Nov 22 2021 08:26:48 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE3MmZkYmEwM2U2NDE1NTRkOTcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2Mzc1NTQ1ODYsImV4cCI6MTYzODE1OTM4Nn0.ZnpchABmKZnO9QsoOMVJYiqvdRk2ccfNRYCeUMldeqw"
+User Requested: undefined
+Payload: {"studentID":11111111}
+URL: /users/signin
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 211.702 ms
+---------------------------------------------------
+
+Mon Nov 22 2021 11:19:07 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NTU0NTcxLCJleHAiOjE2MzgxNTkzNzF9.YPLFwyIdeT_e67G4Vdij2JOX-cHnYPWDiM7d9oEXHOY"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619b27728a0bca1c5adf1dce
+Status Code: 500
+Error Message: "Cannot populate path `draws.round.match` because it is not in your schema. Set the `strictPopulate` option to false to override."
+Content Length: 142
+Response Time: 7.187 ms
+---------------------------------------------------
+
+Mon Nov 22 2021 11:19:59 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NTU0NTcxLCJleHAiOjE2MzgxNTkzNzF9.YPLFwyIdeT_e67G4Vdij2JOX-cHnYPWDiM7d9oEXHOY"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619b27728a0bca1c5adf1dce
+Status Code: 500
+Error Message: "Cannot populate path `draws.round.match` because it is not in your schema. Set the `strictPopulate` option to false to override."
+Content Length: 142
+Response Time: 12.391 ms
+---------------------------------------------------
+
+Mon Nov 22 2021 11:20:52 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NTU0NTcxLCJleHAiOjE2MzgxNTkzNzF9.YPLFwyIdeT_e67G4Vdij2JOX-cHnYPWDiM7d9oEXHOY"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619b27728a0bca1c5adf1dce
+Status Code: 500
+Error Message: "Cannot populate path `draws.round.match` because it is not in your schema. Set the `strictPopulate` option to false to override."
+Content Length: 142
+Response Time: 24.234 ms
+---------------------------------------------------
+
+Mon Nov 22 2021 11:20:56 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NTU0NTcxLCJleHAiOjE2MzgxNTkzNzF9.YPLFwyIdeT_e67G4Vdij2JOX-cHnYPWDiM7d9oEXHOY"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619b27728a0bca1c5adf1dce
+Status Code: 500
+Error Message: "Cannot populate path `draws.round.match` because it is not in your schema. Set the `strictPopulate` option to false to override."
+Content Length: 142
+Response Time: 7.111 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:29:21 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345678}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 10.208 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:31:34 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NjY4ODg1LCJleHAiOjE2MzgyNzM2ODV9.lCW6fivxkJfTKvkhGCBTb8kAFcGSIFzUsYH8zOw381Q"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619cd7c7bc0716e3038e9ed4
+Status Code: 500
+Error Message: "Cannot access 'league' before initialization"
+Content Length: 58
+Response Time: 14.182 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:32:34 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NjY4ODg1LCJleHAiOjE2MzgyNzM2ODV9.lCW6fivxkJfTKvkhGCBTb8kAFcGSIFzUsYH8zOw381Q"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619cd7c7bc0716e3038e9ed4
+Status Code: 500
+Error Message: "Cannot access 'league' before initialization"
+Content Length: 58
+Response Time: 15.926 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:34:49 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NjY4ODg1LCJleHAiOjE2MzgyNzM2ODV9.lCW6fivxkJfTKvkhGCBTb8kAFcGSIFzUsYH8zOw381Q"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619cd7c7bc0716e3038e9ed4
+Status Code: 500
+Error Message: "Cannot access 'league' before initialization"
+Content Length: 58
+Response Time: 17.462 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:34:55 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NjY4ODg1LCJleHAiOjE2MzgyNzM2ODV9.lCW6fivxkJfTKvkhGCBTb8kAFcGSIFzUsYH8zOw381Q"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619cd7c7bc0716e3038e9ed4
+Status Code: 500
+Error Message: "Cannot access 'league' before initialization"
+Content Length: 58
+Response Time: 11.659 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:35:17 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NjY4ODg1LCJleHAiOjE2MzgyNzM2ODV9.lCW6fivxkJfTKvkhGCBTb8kAFcGSIFzUsYH8zOw381Q"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619cd7c7bc0716e3038e9ed4
+Status Code: 500
+Error Message: "Cannot access 'league' before initialization"
+Content Length: 58
+Response Time: 33.096 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:35:21 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NjY4ODg1LCJleHAiOjE2MzgyNzM2ODV9.lCW6fivxkJfTKvkhGCBTb8kAFcGSIFzUsYH8zOw381Q"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619cd7c7bc0716e3038e9ed4
+Status Code: 500
+Error Message: "Cannot access 'league' before initialization"
+Content Length: 58
+Response Time: 10.242 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:35:21 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE5OGJkYmEwM2U2NDE1NTRkOWIwIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjM3NjY4ODg1LCJleHAiOjE2MzgyNzM2ODV9.lCW6fivxkJfTKvkhGCBTb8kAFcGSIFzUsYH8zOw381Q"
+User Requested: {"id":"619b198bdba03e641554d9b0","admin":false}
+Payload: {}
+URL: /games/leagues/list/619cd7c7bc0716e3038e9ed4
+Status Code: 500
+Error Message: "Cannot access 'league' before initialization"
+Content Length: 58
+Response Time: 15.122 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:48:04 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.668 ms
+---------------------------------------------------
+
+Tue Nov 23 2021 15:57:59 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.738 ms
+---------------------------------------------------
+
+Wed Nov 24 2021 02:41:06 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE3MmZkYmEwM2U2NDE1NTRkOTcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2Mzc3MDkwNTMsImV4cCI6MTYzODMxMzg1M30.bm4Qz478ggLOgw-UsILjc7owdLOArm3magsOFj8u5lc"
+User Requested: {"id":"619b172fdba03e641554d970","admin":true}
+Payload: {"title":"تست","Mode":1,"capacity":20,"prize":50}
+URL: /games/leagues/new
+Status Code: 500
+Error Message: "bcryptjs is not defined"
+Content Length: 37
+Response Time: 3.895 ms
+---------------------------------------------------
+
+Wed Nov 24 2021 02:43:18 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE3MmZkYmEwM2U2NDE1NTRkOTcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2Mzc3MDkwNTMsImV4cCI6MTYzODMxMzg1M30.bm4Qz478ggLOgw-UsILjc7owdLOArm3magsOFj8u5lc"
+User Requested: {"id":"619b172fdba03e641554d970","admin":true}
+Payload: {"title":"تست","Mode":1,"capacity":20,"prize":50}
+URL: /games/leagues/new
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 198.886 ms
+---------------------------------------------------
+
+Wed Nov 24 2021 02:44:31 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE3MmZkYmEwM2U2NDE1NTRkOTcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2Mzc3MDkwNTMsImV4cCI6MTYzODMxMzg1M30.bm4Qz478ggLOgw-UsILjc7owdLOArm3magsOFj8u5lc"
+User Requested: {"id":"619b172fdba03e641554d970","admin":true}
+Payload: {"title":"تست","Mode":1,"capacity":20,"prize":50}
+URL: /games/leagues/new
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 194.639 ms
+---------------------------------------------------
+
+Wed Nov 24 2021 02:44:37 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE3MmZkYmEwM2U2NDE1NTRkOTcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2Mzc3MDkwNTMsImV4cCI6MTYzODMxMzg1M30.bm4Qz478ggLOgw-UsILjc7owdLOArm3magsOFj8u5lc"
+User Requested: {"id":"619b172fdba03e641554d970","admin":true}
+Payload: {"title":"تست","Mode":1,"capacity":20,"prize":50}
+URL: /games/leagues/new
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 185.300 ms
+---------------------------------------------------
+
+Wed Nov 24 2021 02:45:09 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE3MmZkYmEwM2U2NDE1NTRkOTcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2Mzc3MDkwNTMsImV4cCI6MTYzODMxMzg1M30.bm4Qz478ggLOgw-UsILjc7owdLOArm3magsOFj8u5lc"
+User Requested: {"id":"619b172fdba03e641554d970","admin":true}
+Payload: {}
+URL: /users/private/avatar
+Status Code: 500
+Error Message: "Illegal arguments: undefined, string"
+Content Length: 50
+Response Time: 6.194 ms
+---------------------------------------------------
+
+Wed Nov 24 2021 02:46:59 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE5YjE3MmZkYmEwM2U2NDE1NTRkOTcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2Mzc3MDkwNTMsImV4cCI6MTYzODMxMzg1M30.bm4Qz478ggLOgw-UsILjc7owdLOArm3magsOFj8u5lc"
+User Requested: {"id":"619b172fdba03e641554d970","admin":true}
+Payload: {}
+URL: /users/private/avatar
+Status Code: 500
+Error Message: "Illegal arguments: undefined, string"
+Content Length: 50
+Response Time: 3.418 ms
+---------------------------------------------------
+
+Fri Nov 26 2021 09:29:52 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345678}
+URL: /users/signin
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 232.008 ms
+---------------------------------------------------
+
+Fri Nov 26 2021 22:42:28 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 6.241 ms
+---------------------------------------------------
+
+Fri Nov 26 2021 22:55:36 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.553 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:28:07 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.875 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:32:15 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.718 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:32:19 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.726 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:37:19 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.418 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:39:13 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.506 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:41:12 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.561 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:41:57 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.573 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:43:41 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.104 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:44:03 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.089 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:44:19 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.836 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:44:21 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.332 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:44:37 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.802 ms
+---------------------------------------------------
+
+Sat Nov 27 2021 00:46:25 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.893 ms
+---------------------------------------------------
+
+Thu May 26 2022 12:31:32 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345678}
+URL: /users/signin
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 374.893 ms
+---------------------------------------------------
+
+Thu May 26 2022 12:34:52 GMT+0430 (Iran Daylight Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0MjMzNDNiMjgyMTc0NjlmODEyIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjUzNTUyMTYzLCJleHAiOjE2NTQxNTY5NjN9.TuE3hZgpe-ULwvQvT00E54wkHEW9rKH9-hPVR5anmZs"
+User Requested: {"id":"628f3423343b28217469f812","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 4.792 ms
+---------------------------------------------------
+
+Thu May 26 2022 12:34:59 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0MjMzNDNiMjgyMTc0NjlmODEyIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjUzNTUyMTYzLCJleHAiOjE2NTQxNTY5NjN9.TuE3hZgpe-ULwvQvT00E54wkHEW9rKH9-hPVR5anmZs"
+User Requested: undefined
+Payload: {"studentID":94413062}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 12.398 ms
+---------------------------------------------------
+
+Thu May 26 2022 12:35:07 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0MjMzNDNiMjgyMTc0NjlmODEyIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjUzNTUyMTYzLCJleHAiOjE2NTQxNTY5NjN9.TuE3hZgpe-ULwvQvT00E54wkHEW9rKH9-hPVR5anmZs"
+User Requested: undefined
+Payload: {"studentID":12345678}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 2.402 ms
+---------------------------------------------------
+
+Thu May 26 2022 12:36:03 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTM1NTIzMzIsImV4cCI6MTY1NDE1NzEzMn0.2VUufCfJm6K19A3DMdq0gFL_iFUj2SxMmqx2j3wR-CI"
+User Requested: {"id":"628f34cc6e3beeb1bfc23270","admin":true}
+Payload: {"title":"لیگ اول","Mode":0,"dimension":4,"scoreless":true,"capacity":"1","prize":50}
+URL: /games/leagues/new
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 119.921 ms
+---------------------------------------------------
+
+Thu May 26 2022 12:37:40 GMT+0430 (Iran Daylight Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.405 ms
+---------------------------------------------------
+
+Mon May 30 2022 11:51:16 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTM4OTUyNjYsImV4cCI6MTY1NDUwMDA2Nn0.LffWsv60rnNHtrZldaSa8shGNEXAq9qxbp09atsNJ0Y"
+User Requested: {"id":"628f34cc6e3beeb1bfc23270","admin":true}
+Payload: {"teamID":null}
+URL: /games/leagues/list/628f34e86e3beeb1bfc2327d
+Status Code: 405
+Error Message: "This league's joining window is closed."
+Content Length: 53
+Response Time: 6.594 ms
+---------------------------------------------------
+
+Mon May 30 2022 11:52:55 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345678,"email":"yek@gmail.com","fullname":"بازیکن اول"}
+URL: /users/signup
+Status Code: 409
+Error Message: "A user with this Student ID or Email has registered before"
+Content Length: 72
+Response Time: 7.296 ms
+---------------------------------------------------
+
+Tue May 31 2022 17:19:25 GMT+0430 (Iran Daylight Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.273 ms
+---------------------------------------------------
+
+Tue May 31 2022 17:19:37 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":123456}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 15.119 ms
+---------------------------------------------------
+
+Tue May 31 2022 17:19:43 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345678}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 4.212 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 09:42:23 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":123,"password":""}
+URL: /users/signin
+Status Code: 422
+Error Message: "Payload validation failed."
+Content Length: 129
+Response Time: 3.776 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:55:49 GMT+0430 (Iran Daylight Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.668 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:56:34 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 1.089 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:56:34 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.337 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:56:34 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 1.079 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:56:44 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.259 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:56:44 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.229 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:58:50 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.500 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:59:08 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.814 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:59:24 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.297 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:59:24 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.805 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 12:59:24 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/undefined/null
+Status Code: 404
+Error Message: undefined
+Content Length: 176
+Response Time: 0.298 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:00:09 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU3OTk5ODgsImV4cCI6MTY1NjQwNDc4OH0.GHfZgbJkIlHj84878TnTsgYeCiWhHHjfv6hOFcp7opU"
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/list/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 170
+Response Time: 0.238 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:02:56 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 168
+Response Time: 0.276 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:16:14 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 404
+Error Message: undefined
+Content Length: 156
+Response Time: 1.220 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:16:20 GMT+0430 (Iran Daylight Time)
+Method: OPTIONS
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /games/leagues
+Status Code: 404
+Error Message: undefined
+Content Length: 156
+Response Time: 0.428 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:20:35 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 159
+Response Time: 0.229 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:20:35 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 159
+Response Time: 0.179 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:20:35 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 159
+Response Time: 0.254 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:28:41 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 159
+Response Time: 0.232 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:28:41 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 159
+Response Time: 0.185 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:28:41 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/null
+Status Code: 404
+Error Message: undefined
+Content Length: 159
+Response Time: 0.249 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:31:27 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/6294711efd9aee1fcc068876
+Status Code: 404
+Error Message: undefined
+Content Length: 179
+Response Time: 0.413 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:31:31 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/6294711efd9aee1fcc068876
+Status Code: 404
+Error Message: undefined
+Content Length: 179
+Response Time: 0.244 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:34:30 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/6294711efd9aee1fcc068876
+Status Code: 404
+Error Message: undefined
+Content Length: 179
+Response Time: 1.060 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:34:30 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/6294711efd9aee1fcc068876
+Status Code: 404
+Error Message: undefined
+Content Length: 179
+Response Time: 1.372 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:34:30 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI4ZjM0Y2M2ZTNiZWViMWJmYzIzMjcwIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE2NTU4MDE0MzIsImV4cCI6MTY1NjQwNjIzMn0.JRWpv4II1FrSeFUJEcaeQnnij3xN25pyL_utxsvqOGE"
+User Requested: undefined
+Payload: {}
+URL: /leagues/attend/6294711efd9aee1fcc068876
+Status Code: 404
+Error Message: undefined
+Content Length: 179
+Response Time: 0.374 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:43:49 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":11111111}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 5.064 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:45:05 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66666666}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 2.258 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:45:12 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66666666}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 1.852 ms
+---------------------------------------------------
+
+Tue Jun 21 2022 13:45:23 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":11111111}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 1.532 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:56:38 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 1.966 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:56:41 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.711 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:56:44 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 1.302 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:56:46 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 2.924 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:56:57 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.262 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:56:59 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 2.405 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:57:02 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 3.554 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:57:06 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 1.938 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:58:36 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.495 ms
+---------------------------------------------------
+
+Mon Oct 17 2022 23:58:57 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.219 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:00:00 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.276 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:00:01 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 1.748 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:00:25 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.217 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:04:47 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 2.168 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:04:54 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.838 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:05:08 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.138 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:05:16 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.870 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:05:25 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.675 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:05:47 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.764 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:06:18 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.431 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:06:22 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 1.738 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:06:39 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 1.267 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:07:01 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.680 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:07:07 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.378 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:07:09 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 3.312 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:07:21 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.588 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:07:31 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.956 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:07:36 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.358 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:08:14 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 0.483 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:08:23 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.317 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:08:38 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.634 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:09:43 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 2.056 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 00:12:47 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 3.184 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 15:45:12 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /users/records
+Status Code: 500
+Error Message: "Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/"
+Content Length: 301
+Response Time: 30003.292 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:03:15 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 1.373 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:03:18 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.638 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:03:20 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.992 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:03:21 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.393 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:04:08 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.874 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:12:32 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.351 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:12:37 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.305 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:12:40 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.352 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:12:44 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.900 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:12:47 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.252 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:12:48 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.202 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:15:14 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.399 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:22:52 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.328 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:22:58 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.827 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:22:58 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.412 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:03 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.299 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:04 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.501 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:07 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.307 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:11 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.501 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:13 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.230 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:14 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.577 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:23 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.586 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:36 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.218 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:36 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.221 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:23:57 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.384 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:24:11 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.436 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:24:13 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.319 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:24:24 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.344 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:24:26 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.295 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:17 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.372 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:22 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.360 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:23 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.295 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:25 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.314 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:27 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.269 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:47 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.301 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:53 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.416 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:25:56 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.216 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:26:04 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.372 ms
+---------------------------------------------------
+
+Tue Oct 18 2022 16:26:05 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /avats/no-avatar.png
+Status Code: 404
+Error Message: undefined
+Content Length: 158
+Response Time: 0.277 ms
+---------------------------------------------------
+

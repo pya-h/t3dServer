@@ -1,0 +1,38 @@
+{
+  "name": "t3dweb",
+  "version": "0.2.0",
+  "description": "T3D online web server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pya-py/t3dweb.git"
+  },
+  "author": "pya-py",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pya-py/t3dweb/issues"
+  },
+  "homepage": "https://github.com/pya-py/t3dweb#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "node-cron": "^3.0.0",
+    "nodemailer": "^6.7.0",
+    "nodemailer-smtp-transport": "^2.4.2",
+    "object-sizeof": "^1.6.1",
+    "url": "^0.11.0",
+    "ws": "^8.2.3"
+  }
+}
