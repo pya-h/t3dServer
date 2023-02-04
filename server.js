@@ -11,12 +11,12 @@ const noticesRoutes = require("./routes/notices");
 const { bindSocketsToMainServer } = require("./websockets");
 const { createServer } = require("http");
 const fs = require('fs');
-const { morganLogger } = require("./middlewares/morganLogger");
+// const { morganLogger } = require("./middlewares/morganLogger");
 const { Routes } = require("./configs");
 
 const app = express();
 //──── Server Port
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 //──── Static Folder
 app.use(`/${Routes.Avatars}`, express.static(path.join(__dirname, "public", Routes.Avatars)));
@@ -25,7 +25,7 @@ app.use(`/${Routes.Avatars}`, express.static(path.join(__dirname, "public", Rout
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(setHeaders);
-app.use(morganLogger);
+// app.use(morganLogger);
 
 //──── Routes
 app.use(`/${Routes.Users}`, usersRoutes);
