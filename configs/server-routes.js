@@ -1,11 +1,14 @@
 //server routes
 module.exports = {
     // HttpRoot: "https://localhost:4000",
-    HttpRoot: "http://localhost:4000",
+    // HttpRoot: "http://localhost:4000",
+    HttpRoot: "https://t3d.iran.liara.run",
 
     Avatars: "avats",
     // HttpRoot: "https://t3dweb.herokuapp.com",
-    WebSocketRoot: "wss://t3dweb.herokuapp.com",
+    // WebSocketRoot: "wss://t3dweb.herokuapp.com",
+    WebSocketRoot: "wss://t3d.iran.liara.run",
+
     webSocketRoute: "ws",
     wsGamePlayRoute: "gameplay",
     wsGlobalRoute: "global",

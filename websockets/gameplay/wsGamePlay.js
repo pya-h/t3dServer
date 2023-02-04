@@ -46,7 +46,7 @@ const sendNextMoveTo = async(rname, madeBy, nextMove, nextTurn) => {
                 endThisGame(rname);
                 return;
             }
-            //what happens if try crashes some where near here??? 
+            //what happens if try crashes some where near here???
             rooms[rname].turn = nextTurn; //update turn in game object
             //send scores and updated table back to targets
             // ...
@@ -128,7 +128,7 @@ const endThisGame = (rname) => {
 const startGame = (rname) => {
     const { playerX, playerO, timer, dimension } = rooms[rname];
     rooms[rname].forceCloseTime = Date.now() + dimension * dimension * dimension * (GameRules.T3D.TurnTimeOut + 5) * 1000; //game force ending time in milisecs
-    // + 5 is for considering all time errors 
+    // + 5 is for considering all time errors
     [playerX, playerO].forEach(each => {
         each.socket.send(createSocketCommand("START", timer.t0));
     })
@@ -196,8 +196,8 @@ module.exports.Server = (path) => {
                     try {
                         // console.log(rname);
                         // if there is no room with this name, then create one
+                        const { gameType, scoreless, gameID } = msg; //*****change this make client send the type of game */
                         if (!rooms[rname]) {
-                            const { gameType, scoreless, gameID } = msg; //*****change this make client send the type of game */
                             rooms[rname] = T3DLogic.initiate(Number(gameType), Boolean(scoreless));
                         }
 
