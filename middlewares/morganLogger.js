@@ -13,7 +13,7 @@ const accessLogStream = fs.createWriteStream(
 // `res: ${JSON.stringify(res.data)}`,
 exports.morganLogger = morgan(
     (tokens, req, res) => {
-        
+
         req.body.password && delete req.body.password;
         return [
             (new Date()).toString(),
@@ -33,7 +33,7 @@ exports.morganLogger = morgan(
             "---------------------------------------------------\n",
         ].join("\n");
     },
-    { stream: accessLogStream, 
-        skip: (req, res) => { return res.statusCode < 400 } 
+    { stream: accessLogStream,
+        skip: (req, res) => { return res.statusCode < 400 }
     }
 );
