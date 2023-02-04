@@ -1,6 +1,7 @@
 const { StatusCodes } = require("../configs");
 
 exports.errorHandler = (error, req, res, next) => {
+    console.log(error);
     const status = error.statusCode || StatusCodes.InternalServerError;
     const message = error.message;
     const data = error.data;

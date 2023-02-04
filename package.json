@@ -1,6 +1,6 @@
 {
-  "name": "t3dweb",
-  "version": "0.2.0",
+  "name": "t3d",
+  "version": "0.3.0",
   "description": "T3D online web server",
   "main": "server.js",
   "scripts": {
