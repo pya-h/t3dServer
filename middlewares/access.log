@@ -1,0 +1,96 @@
+Sat Mar 04 2023 23:03:42 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":78123456}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 17.567 ms
+---------------------------------------------------
+
+Sat Mar 04 2023 23:03:47 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345678,"password":""}
+URL: /users/signin
+Status Code: 422
+Error Message: "Payload validation failed."
+Content Length: 129
+Response Time: 2.106 ms
+---------------------------------------------------
+
+Sat Mar 04 2023 23:03:53 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345678}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.448 ms
+---------------------------------------------------
+
+Sat Mar 04 2023 23:04:05 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66606660}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.573 ms
+---------------------------------------------------
+
+Sat Mar 04 2023 23:04:11 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":94413062}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.578 ms
+---------------------------------------------------
+
+Sat Mar 04 2023 23:04:44 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":87654321}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 2.498 ms
+---------------------------------------------------
+
+Sat Mar 04 2023 23:07:31 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZTc3YTY3MTgzNTAwMWVlMjEzYTZlIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjc3OTU4NjQ4LCJleHAiOjE2Nzg1NjM0NDh9.NDObjZt1dK9GIiTKaJalWJ77Q0kqXiPkH9mtWaVqBtw"
+User Requested: {"id":"63ce77a671835001ee213a6e","admin":false}
+Payload: {"teamID":null}
+URL: /leagues/list/63ce785671835001ee213ab8
+Status Code: 409
+Error Message: "player has joined before"
+Content Length: 38
+Response Time: 2.961 ms
+---------------------------------------------------
+
+Mon Mar 06 2023 00:35:49 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12332112}
+URL: /users/signin
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 215.360 ms
+---------------------------------------------------
+

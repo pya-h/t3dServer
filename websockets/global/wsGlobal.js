@@ -61,6 +61,53 @@ const isClientFree = (cid) => !onlines[cid].room || !onlines[cid].room.name;
 const roomid = (uid1, uid2) => //create a room uuid for each game
     uid1 < uid2 ? `${uid1}_${uid2}` : `${uid2}_${uid1}`;
 
+const roomForCorrespondingOngoingMatch = async(userID, leagueID) => {
+    const league = await LeagueModel.findById(leagueID);
+    if (!league) {
+        const error = new Error("No league has been found");
+        error.statusCode = StatusCodes.LeagueNotFound;
+        throw error;
+    }
+
+    // now search if attender has game in this league
+    const { matches } = league;
+    const correspondingMatch = matches[matches.length - 1].find((match) =>
+        match.players.find((playerID) => playerID === userID)
+    );
+    if (correspondingMatch) {
+        if (new Date(correspondingMatch.schedule) <= new Date()) { // meaning that the game time has started
+            console.log("gathering data for user");
+
+            if (!correspondingMatch.gameID) {
+                // if this player is the first attendant
+                // get a room
+                return {
+                    players: correspondingMatch.players,
+                    dimension: league._type.dimension,
+                    scoreless: league._type.scoreless
+                };
+            } // else: just send the gameID to the requester, if the game is not expired
+            else {
+                // check game game not passed an hour
+                // check game is still live (isLive)
+                // and check other things like players in the game field to math the league data
+
+            }
+        } else {
+            const error = new Error("Game is not started yet!");
+            error.statusCode = StatusCodes.NotStartedYet;
+            throw error;
+        }
+    } else {
+        const error = new Error(
+            "No match has been found for this user in this league!"
+        );
+        error.statusCode = StatusCodes.MatchNotFound;
+        throw error;
+    }
+
+}
+
 module.exports.closeThisRoom = (expiredRoomName, canceled = false) => { //when wsGameplay ends a game or collects garbage it syncs its update with this method
     try {
         if (t3dRooms[expiredRoomName]) {
@@ -219,6 +266,30 @@ module.exports.Server = (path) => {
 
                                 break;
                             }
+                        case "attend_league_game":
+                            {
+                                const { leagueId } = msg;
+                                const room = roomForCorrespondingOngoingMatch(myID, leagueId);
+                                if (room) {
+                                    room.name = roomid(room.players[0], room.players[1]);
+                                    delete room.players; // not needed anymore
+                                    t3dRooms[room.name] = room;
+
+                                    // now onform both clients
+                                    onlines[cid].room = {...room };
+                                    onlines[cid].socket.send(
+                                        createSocketCommand("ATTEND_LEAGUE_GAME", {
+                                            found: room,
+                                            stats: {
+                                                players: Object.keys(onlines).length,
+                                                games: Object.keys(t3dRooms).length
+                                            }
+                                        })
+                                    );
+                                }
+                                break;
+
+                            }
                         case "friendly_game":
                             { //request a friendlygame from a friend
                                 const { askerName, targetID, gameType, scoreless } = msg;
@@ -364,7 +435,7 @@ module.exports.Server = (path) => {
             delete onlines[myID];
             console.log("GLOBAL:\t" + myID + " disconnected");
             myID = null;
-            //if game ended, remove t3dRooms[rid]            
+            //if game ended, remove t3dRooms[rid]
             //... complete this
         });
     });
