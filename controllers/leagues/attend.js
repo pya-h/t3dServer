@@ -20,8 +20,6 @@ module.exports = async(req, res, next) => {
             match.players.find((playerID) => playerID === userID)
         );
         if (correspondingMatch) {
-            console.log("one corresponding match found");
-
             if (new Date(correspondingMatch.schedule) <= new Date()) { // meaning that the game time has started
                 console.log("gathering data for user");
 
