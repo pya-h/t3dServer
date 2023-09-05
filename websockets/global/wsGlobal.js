@@ -1,11 +1,12 @@
 const WebSocket = require("ws");
 const { makeFriends } = require('../../controllers/users');
-
+const LeagueModel = require("../../models/leagues");
+const { createGame } = require("../../controllers/games");
 const { saveMessage } = require('../../controllers/chats');
 var onlines = []; //keys: clientID, values: game type and socket
-// onlines['clientID'] = {gameType: int, room: string}
-// .type is NOT NULL and .room is null ==> player is online
-// .type and .room both NOT NULL => player is in game
+// onlines['clientID'] = {gamedimension: int, room: string}
+// .dimension is NOT NULL and .room is null ==> player is online
+// .dimension and .room both NOT NULL => player is in game
 // .oponentID this is for when client goes out of the room and when comes back to the game
 
 var t3dRooms = []; //for uuid generate, roomid is used to make ids with less memory consumption
@@ -27,31 +28,32 @@ function findRandomIndex(max) {
 //temp method
 const log_memory_usage = () => {
     console.log('---------------------------global-scoket-mem-----------------------------\n');
-    const online_size = Number(sizeof(Object.keys(onlines)) + sizeof(Object.values(onlines))) / 1024,
-        t3d_size = Number(sizeof(Object.keys(t3dRooms)) + sizeof(Object.values(t3dRooms))) / 1024;
+    const online_size = +(sizeof(Object.keys(onlines)) + sizeof(Object.values(onlines))) / 1024,
+        t3d_size = +(sizeof(Object.keys(t3dRooms)) + sizeof(Object.values(t3dRooms))) / 1024;
     console.log('new user came online --> allocated memory:' + online_size + 'KB');
     console.log('new game:t3d added to games room --> allocated memory:' + t3d_size + 'KB');
-    console.log('total: ' + Number(online_size + t3d_size) + 'KB');
+    console.log('total: ' + +(online_size + t3d_size) + 'KB');
     console.log('---------------------------global-scoket-mem-----------------------------\n');
 }
 
 const findEngagedGame = (clientID) => {
     Object.keys(t3dRooms).forEach((rid) => {
-        const [p0, p1] = t3dRooms[rid].players
+        const [p0, p1] = t3dRooms[rid].players;
         if (p0 === clientID) {
             onlines[clientID].room = {
                 name: rid,
-                type: t3dRooms[rid].dimension,
+                dimension: t3dRooms[rid].dimension,
                 scoreless: t3dRooms[rid].scoreless
             }
             onlines[clientID].opponent = p1;
         } else if (p1 === clientID) {
             onlines[clientID].room = {
                 name: rid,
-                type: t3dRooms[rid].dimension,
+                dimension: t3dRooms[rid].dimension,
                 scoreless: t3dRooms[rid].scoreless
             }
             onlines[clientID].opponent = p0;
+
         }
     });
 }
@@ -61,7 +63,14 @@ const isClientFree = (cid) => !onlines[cid].room || !onlines[cid].room.name;
 const roomid = (uid1, uid2) => //create a room uuid for each game
     uid1 < uid2 ? `${uid1}_${uid2}` : `${uid2}_${uid1}`;
 
-const roomForCorrespondingOngoingMatch = async(userID, leagueID) => {
+const informRoommates = (room, command) => {
+    t3dRooms[room.name].players.forEach((cid) => {
+        onlines[cid].room = room;
+        onlines[cid].socket.send(command);
+    });
+};
+
+const roomForCorrespondingOngoingLeagueMatch = async(userID, leagueID) => {
     const league = await LeagueModel.findById(leagueID);
     if (!league) {
         const error = new Error("No league has been found");
@@ -77,15 +86,14 @@ const roomForCorrespondingOngoingMatch = async(userID, leagueID) => {
     if (correspondingMatch) {
         if (new Date(correspondingMatch.schedule) <= new Date()) { // meaning that the game time has started
             console.log("gathering data for user");
-
-            if (!correspondingMatch.gameID) {
+            const { players } = correspondingMatch;
+            if (!correspondingMatch.game) {
                 // if this player is the first attendant
                 // get a room
-                return {
-                    players: correspondingMatch.players,
-                    dimension: league._type.dimension,
-                    scoreless: league._type.scoreless
-                };
+                const { gameID } = await createGame(players[0], players[1], league._type.dimension, true, leagueID);
+                correspondingMatch.game = gameID;
+                await league.save();
+
             } // else: just send the gameID to the requester, if the game is not expired
             else {
                 // check game game not passed an hour
@@ -93,6 +101,13 @@ const roomForCorrespondingOngoingMatch = async(userID, leagueID) => {
                 // and check other things like players in the game field to math the league data
 
             }
+            return {
+                gameID: correspondingMatch.game.toString(),
+                leagueID,
+                players,
+                dimension: league._type.dimension,
+                scoreless: league._type.scoreless
+            };
         } else {
             const error = new Error("Game is not started yet!");
             error.statusCode = StatusCodes.NotStartedYet;
@@ -105,7 +120,6 @@ const roomForCorrespondingOngoingMatch = async(userID, leagueID) => {
         error.statusCode = StatusCodes.MatchNotFound;
         throw error;
     }
-
 }
 
 module.exports.closeThisRoom = (expiredRoomName, canceled = false) => { //when wsGameplay ends a game or collects garbage it syncs its update with this method
@@ -156,7 +170,7 @@ module.exports.Server = (path) => {
                                     onlines[clientID] = {
                                         room: {
                                             name: null,
-                                            type: null,
+                                            dimension: null,
                                             scoreless: false
                                         },
                                         socket,
@@ -170,6 +184,7 @@ module.exports.Server = (path) => {
 
                                 findEngagedGame(clientID);
                                 const { room, opponent } = onlines[clientID];
+
                                 socket.send(
                                     createSocketCommand("ONLINE", {
                                         players: Object.keys(onlines).length,
@@ -191,7 +206,7 @@ module.exports.Server = (path) => {
 
                                 onlines[clientID].room = {
                                     name: null,
-                                    type: Number(gameType),
+                                    dimension: +gameType,
                                     scoreless: Boolean(scoreless)
                                 }
                                 // first search in on going games: maybe user was playing game and went out for some reason
@@ -213,7 +228,7 @@ module.exports.Server = (path) => {
                                         (cid) =>
                                         onlines[cid].room && !onlines[cid].room.name &&
                                         onlines[cid].room.scoreless === expectedGame.scoreless &&
-                                        onlines[cid].room.type === expectedGame.type && //has the same game type
+                                        onlines[cid].room.dimension === expectedGame.dimension && //has the same game type
                                         cid !== clientID // and its not me
                                     );
 
@@ -230,23 +245,17 @@ module.exports.Server = (path) => {
                                     if (readyClients.length >= 1) {
                                         // console.table(readyClients);
                                         const rivalID = readyClients[findRandomIndex(readyClients.length)];
-                                        const room = { name: roomid(rivalID, clientID), scoreless: expectedGame.scoreless, type: expectedGame.type };
+                                        const room = { name: roomid(rivalID, clientID), scoreless: expectedGame.scoreless, dimension: expectedGame.dimension };
                                         // inform both clients
                                         if (onlines[rivalID]) {
-                                            t3dRooms[room.name] = { players: [clientID, rivalID], dimension: room.type, scoreless: room.scoreless };
-                                            t3dRooms[room.name].players.forEach((cid) => {
-                                                onlines[cid].room = {...room };
-                                                onlines[cid].socket.send(
-                                                    createSocketCommand("FIND_RESULT", {
-                                                        found: room,
-                                                        stats: {
-                                                            players: Object.keys(onlines).length,
-                                                            games: Object.keys(t3dRooms).length
-                                                        }
-                                                    })
-                                                );
-                                            });
-
+                                            t3dRooms[room.name] = { players: [clientID, rivalID], dimension: room.dimension, scoreless: room.scoreless };
+                                            informRoommates(room, createSocketCommand("FIND_RESULT", {
+                                                found: room,
+                                                stats: {
+                                                    players: Object.keys(onlines).length,
+                                                    games: Object.keys(t3dRooms).length
+                                                }
+                                            }));
                                             //log_memory_usage();
                                         }
                                         // send a cmd to me and opponent with roomName => after both clients set their roomName equally they auto connect
@@ -267,26 +276,24 @@ module.exports.Server = (path) => {
                                 break;
                             }
                         case "attend_league_game":
-                            {
-                                const { leagueId } = msg;
-                                const room = roomForCorrespondingOngoingMatch(myID, leagueId);
-                                if (room) {
-                                    room.name = roomid(room.players[0], room.players[1]);
-                                    delete room.players; // not needed anymore
-                                    t3dRooms[room.name] = room;
+                            { // MAYBE WRITE THEIS WITH .then .catch
+                                (async() => {
+                                    const { leagueId } = msg;
+                                    const room = await roomForCorrespondingOngoingLeagueMatch(clientID, leagueId);
+                                    if (room) {
+                                        room.name = roomid(room.players[0], room.players[1]);
+                                        t3dRooms[room.name] = room;
 
-                                    // now onform both clients
-                                    onlines[cid].room = {...room };
-                                    onlines[cid].socket.send(
-                                        createSocketCommand("ATTEND_LEAGUE_GAME", {
-                                            found: room,
+                                        // now onform both clients
+                                        informRoommates(room, createSocketCommand("ATTEND_LEAGUE_GAME", {
+                                            room,
                                             stats: {
                                                 players: Object.keys(onlines).length,
                                                 games: Object.keys(t3dRooms).length
                                             }
-                                        })
-                                    );
-                                }
+                                        }));
+                                    }
+                                })();
                                 break;
 
                             }
@@ -295,7 +302,7 @@ module.exports.Server = (path) => {
                                 const { askerName, targetID, gameType, scoreless } = msg;
                                 findEngagedGame(clientID);
                                 const { room } = onlines[clientID];
-                                // onlines[clientID].type check this or not?
+                                // onlines[clientID].dimension check this or not?
                                 if (room && room.name) { //if player is in a game currenly or is searching
                                     socket.send(createSocketCommand("YOUR_BUSY"));
                                     //i think this doesnt work well because of .onclose
@@ -327,16 +334,10 @@ module.exports.Server = (path) => {
                                     if (!onlines[inviterID])
                                         socket.send(createSocketCommand("TARGET_OFFLINE"))
                                     else if (inviterID !== clientID && isClientFree(inviterID) && isClientFree(clientID)) {
-                                        const room = { name: roomid(inviterID, clientID), scoreless, type: gameType };
-                                        t3dRooms[room.name] = { players: [inviterID, clientID], dimension: room.type, scoreless: room.scoreless };
+                                        const room = { name: roomid(inviterID, clientID), scoreless, dimension: gameType };
+                                        t3dRooms[room.name] = { players: [inviterID, clientID], dimension: room.dimension, scoreless: room.scoreless };
                                         console.log(`GLOBAL:\tfriendly game initiated successfully in room::${room.name}`);
-                                        t3dRooms[room.name].players.forEach((cid) => {
-                                            onlines[cid].socket.send(
-                                                createSocketCommand("INVITATION_ACCEPTED", room)
-                                            );
-                                            onlines[cid].room = {...room };
-                                            // add some boolean to show the game is friendly and doesnt affect records
-                                        });
+                                        informRoommates(room, createSocketCommand("INVITATION_ACCEPTED", room));
                                         //log_memory_usage();
                                     }
                                 } else {

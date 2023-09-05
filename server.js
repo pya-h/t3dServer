@@ -17,7 +17,7 @@ const { Routes } = require("./configs");
 const app = express();
 //──── Server Port
 // const PORT = process.env.PORT || 3000;
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 
 //──── Static Folder
 app.use(`/${Routes.Avatars}`, express.static(path.join(__dirname, "public", Routes.Avatars)));

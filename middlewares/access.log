@@ -94,3 +94,159 @@ Content Length: 29
 Response Time: 215.360 ms
 ---------------------------------------------------
 
+Tue Mar 28 2023 03:10:01 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues/list/63ce785671835001ee213ab8
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 5.292 ms
+---------------------------------------------------
+
+Tue Mar 28 2023 03:10:01 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues/list/63ce785671835001ee213ab8
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 1.219 ms
+---------------------------------------------------
+
+Tue Mar 28 2023 03:37:47 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":94413062}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.220 ms
+---------------------------------------------------
+
+Tue Mar 28 2023 03:37:53 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":98765432}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 9.291 ms
+---------------------------------------------------
+
+Tue Mar 28 2023 03:38:02 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66606660}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 2.848 ms
+---------------------------------------------------
+
+Tue Mar 28 2023 03:42:55 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":94413062}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 6.559 ms
+---------------------------------------------------
+
+Tue Mar 28 2023 03:43:38 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12321112}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 7.870 ms
+---------------------------------------------------
+
+Mon Sep 04 2023 12:53:07 GMT+0430 (Iran Daylight Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmNGNmNTYzZjM4NGEyMmZjMjFjMjg5IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjkzODE1Nzc4LCJleHAiOjE2OTQ0MjA1Nzh9.Euq17jA0VNl0DgiBgOKmZMdAoO-l68X4bjubndZVKfc"
+User Requested: {"id":"64f4cf563f384a22fc21c289","admin":false}
+Payload: {"teamID":null}
+URL: /leagues/list/64f593ca811ce11b1b0ca6ea
+Status Code: 405
+Error Message: "This league's joining window is closed."
+Content Length: 53
+Response Time: 236.997 ms
+---------------------------------------------------
+
+Tue Sep 05 2023 17:39:59 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues/list/63ce785671835001ee213ab8
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 27.795 ms
+---------------------------------------------------
+
+Tue Sep 05 2023 17:39:59 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "null"
+User Requested: undefined
+Payload: {}
+URL: /leagues/list/63ce785671835001ee213ab8
+Status Code: 420
+Error Message: "jwt must be provided"
+Content Length: 34
+Response Time: 3.083 ms
+---------------------------------------------------
+
+Tue Sep 05 2023 17:41:25 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":87654321}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 6.129 ms
+---------------------------------------------------
+
+Tue Sep 05 2023 17:41:38 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":98765432}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 14.434 ms
+---------------------------------------------------
+
+Tue Sep 05 2023 17:41:46 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":11111111}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 15.118 ms
+---------------------------------------------------
+

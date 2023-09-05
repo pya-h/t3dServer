@@ -33,7 +33,7 @@ module.exports = async(userID, achievement) => {
         await userFound.save();
     } catch (err) {
         console.log(err);
-        if (!error.statusCode) err.statusCode = StatusCodes.InternalServerError;
+        if (!err.statusCode) err.statusCode = StatusCodes.InternalServerError;
         //next(err); good idea?
     }
 };

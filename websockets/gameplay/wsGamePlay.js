@@ -68,10 +68,10 @@ const sendNextMoveTo = async(rname, madeBy, nextMove, nextTurn) => {
 
             if (!rooms[rname].gameID) {
                 const { gameID } = await createGame(playerX.id, playerO.id, dimension, true);
-                rooms[rname].gameID = gameID;
+                rooms[rname].gameID = gameID.toString();
 
                 [playerX, playerO].forEach(eachPlayer => {
-                    eachPlayer.socket.send(createSocketCommand("REGISTER_GAME", { gameID }));
+                    eachPlayer.socket.send(createSocketCommand("REGISTER_GAME", { gameID: gameID.toString() }));
                 })
             }
         } else //cell's not empty
@@ -100,7 +100,7 @@ const endThisGame = (rname) => {
     // check if game record has been created --> if not: this means no move has been made at all --> both players are offline from the beginning
     if (gameID) {
         const lastCommand = createSocketCommand("END", {
-            turn: turn,
+            turn,
             xScore: playerX.score,
             oScore: playerO.score
         }); //replace msg param with winner's turn
@@ -117,7 +117,6 @@ const endThisGame = (rname) => {
         delete rooms[rname];
     } else {
         // if no game record created --> consider the game never started --> summary: SHOTOR DIDI NADIDI
-        const lastCommand = createSocketCommand("CLOSE");
         closeThisRoom(rname, true); //inform wsglobal to sync
         delete rooms[rname];
     }
@@ -153,7 +152,7 @@ const leaveRoom = (rname, playerID) => { //not used yet.. cause the data here in
 //temp method
 const log_memory_usage = () => {
     console.log('---------------------------gameplay-scoket-mem-----------------------------\n');
-    const online_size = Number(sizeof(Object.keys(rooms)) + sizeof(Object.values(rooms))) / 1024;
+    const online_size = +(sizeof(Object.keys(rooms)) + sizeof(Object.values(rooms))) / 1024;
     console.log('new game up and running --> allocated memory:' + online_size + 'KB');
     console.log('---------------------------gameplay-scoket-mem-----------------------------\n');
 }
@@ -196,9 +195,9 @@ module.exports.Server = (path) => {
                     try {
                         // console.log(rname);
                         // if there is no room with this name, then create one
-                        const { gameType, scoreless, gameID } = msg; //*****change this make client send the type of game */
+                        const { gameType, scoreless, gameID, leagueID } = msg; //*****change this make client send the type of game */
                         if (!rooms[rname]) {
-                            rooms[rname] = T3DLogic.initiate(Number(gameType), Boolean(scoreless));
+                            rooms[rname] = T3DLogic.initiate(+gameType, Boolean(scoreless));
                         }
 
                         //initiatilize room and players
@@ -211,6 +210,10 @@ module.exports.Server = (path) => {
                         }
                         if (!rooms[rname].gameID && gameID)
                             rooms[rname].gameID = gameID;
+
+                        if (!rooms[rname].leagueID && leagueID)
+                            rooms[rname].leagueID = leagueID;
+
                         const { playerX, playerO, lastMove } = rooms[rname];
                         // update connections
                         [playerX, playerO].forEach((each, index) => {
