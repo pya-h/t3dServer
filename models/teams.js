@@ -15,7 +15,7 @@ const teamSchema = new Schema({
     },
     logo: {
         type: String,
-        default: nuyll, // find sth as no-logo file for this too
+        default: null, // find sth as no-logo file for this too
     },
     prestidge: { // sth to messure teams performance so far
         type: Number,

@@ -71,8 +71,9 @@ const leaguesSchema = new Schema({
                     required: true,
                     unique: true
                 }],
-                gameID: {
-                    type: String,
+                game: {
+                    type: Schema.Types.ObjectId,
+                    ref: "Games",
                     default: null
                 }
             }

@@ -40,7 +40,7 @@ module.exports = async(IDs) => {
         }
         const chatLink = mongoose.Types.ObjectId(chatID);
         for (let index = 0; index < IDs.length; index++) {
-            const friendID = IDs[Number(!index)];
+            const friendID = IDs[+!index];
             const friendsObjectID = mongoose.Types.ObjectId(friendID);
             persons[index].friends.push({ self: friendsObjectID, chat: chatLink });
             persons[index].save();

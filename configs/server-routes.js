@@ -1,14 +1,19 @@
+const Port = 8080,
+    Host = "localHost",
+    isHttps = true;
+
+// other previously used Host:
+// const Host = t3d.iran.liara.runl;
+// const Host = t3dweb.herokuapp.com;
+// const Host = "onlinepricer.fun:${Port}";
+
 //server routes
 module.exports = {
-    // HttpRoot: "https://localhost:4000",
-    // HttpRoot: "http://localhost:4000",
-    HttpRoot: "https://t3d.iran.liara.run",
-
+    Port,
+    Host,
+    HttpRoot: `${isHttps ? "https" : "http"}://${Host}:${Port}`,
     Avatars: "avats",
-    // HttpRoot: "https://t3dweb.herokuapp.com",
-    // WebSocketRoot: "wss://t3dweb.herokuapp.com",
-    WebSocketRoot: "wss://t3d.iran.liara.run",
-
+    webSocketRoot: `${isHttps ? "wss" : "ws"}://${Host}:${Port}`,
     webSocketRoute: "ws",
     wsGamePlayRoute: "gameplay",
     wsGlobalRoute: "global",

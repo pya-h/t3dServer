@@ -25,6 +25,12 @@ const gameSchema = new Schema({
         type: Boolean,
         default: true
     },
+
+    league: {
+        type: Schema.Types.ObjectId,
+        ref: "Leagues",
+        default: null
+    }
 });
 
 module.exports = mongoose.model("Games", gameSchema);
