@@ -1,4 +1,4 @@
-const { Routes, StatusCodes } = require('../../configs');
+const { StatusCodes } = require('../../configs');
 const UserModel = require('../../models/users');
 const getChatID = require('./getChatID');
 const fs = require('fs');

@@ -1,40 +1,79 @@
-const { StatusCodes } = require("../../configs");
+const { StatusCodes, GameRules } = require("../../configs");
 const GameModel = require("../../models/games");
 
-module.exports = async(gameID, xID, oID, xScore, oScore, isLive) => {
-    try {
-        console.log(gameID);
-        const game = await GameModel.findById(gameID);
-        if (!game) {
-            const error = new Error("No game with this id has been found");
-            error.statusCode = StatusCodes.NotFound;
-            throw error;
-        }
+module.exports = async(gameID, X, O, isLive = true) => {
+        try {
+            console.log(gameID);
+            let game = await GameModel.findById(gameID).populate("league");
+            if (!game) {
+                const error = new Error("No game with this id has been found");
+                error.statusCode = StatusCodes.NotFound;
+                throw error;
+            }
 
-        // update game
-        // verification step:
-        // 1. gameID verification
-        // 2. xID && oID verif
-        // use foreach, but first check if foreach paraneter is byRef pr byVal
-        if (
-            xID.toString() === game.players[0].self.toString() && //its not populated => so .self is actually the id
-            oID.toString() === game.players[1].self.toString() && //check player IDs are true- otherwise request is unauthorized
-            game.isLive // when isLive is set to false means game ended and there is no updating accepted
-        ) {
-            game.players[0].score = xScore;
-            game.players[1].score = oScore;
-            game.isLive = isLive;
-        } else {
-            const error = new Error("Unauthorized request");
-            error.statusCode = StatusCodes.Forbidden; //means forbidden:
-            // use another code?
-            throw error;
-        }
-        await game.save();
-        // console.log(game);
-        // res.status(200).json({ message: "game result updated." });
-    } catch (err) {
-        console.log(err);
-        //manage exeptions better
-    }
-};
+            // update game
+            // verification step:
+            // 1. gameID verification
+            // 2. X.id && O.id verif
+            // use foreach, but first check if foreach paraneter is byRef pr byVal
+            if (
+                X.id === game.players[0].self.toString() && //its not populated => so .self is actually the id
+                O.id === game.players[1].self.toString() && //check player IDs are true- otherwise request is unauthorized
+                game.isLive // when isLive is set to false means game ended and there is no updating accepted
+            ) {
+                game.players[0].score = X.score;
+                game.players[1].score = O.score;
+                game.isLive = isLive;
+            } else {
+                const error = new Error("Unauthorized request");
+                error.statusCode = StatusCodes.Forbidden; //means forbidden:
+                // use another code?
+                throw error;
+            }
+
+            await game.save();
+
+            // console.log(game.league);
+            if (game.league) {
+                for (let i = 0; i < game.players.length; i++) {
+                    const ci = game.league.contesters.findIndex(
+                        (c) =>
+                        c.player.toString() === game.players[i].self.toString()
+                    );
+                    if (ci !== -1) {
+                        const j = (i + 1) % 2; // other player's index
+                        game.league.contesters[ci].progress.wins += +(
+                            game.players[i].score > game.players[j].score
+                        );
+                        game.league.contesters[ci].progress.draws += +(
+                            game.players[i].score === game.players[j].score
+                        );
+                        game.league.contesters[ci].progress.loses += +(
+                            game.players[i].score < game.players[j].score
+                        );
+
+                        // calculate CONTESTER SCORE  based on the league type and the number of wins and draws
+                        // score = wins * 3 + draws?
+                        if (game.league._mode > 0) {
+                            // mode 0 is the kickout league that score is not important there!
+                            game.league.contesters[ci].progress.score =
+                                game.league.contesters[ci].progress.wins *
+                                GameRules.T3D.GameStatusScores.WIN +
+                                game.league.contesters[ci].progress.draws *
+                                GameRules.T3D.GameStatusScores.DRAW +
+                                game.league.contesters[ci].progress.loses *
+                                GameRules.T3D.GameStatusScores.LOSE; // in case losing has a negative score!}
+                        }
+                        // console.log(game.league.contesters[ci]);
+                    }
+
+                    await game.league.save();
+                    await game.save();
+                }
+                // console.log(game);
+                // res.status(200).json({ message: "game result updated." });
+            } catch (err) {
+                console.log(err);
+                //manage exeptions better**************
+            }
+        };

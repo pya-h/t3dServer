@@ -11,10 +11,8 @@ router.get("/", leaguesController.fetch);
 //------------ /leagues/list/:leagueID -> join a league
 router.get(`/${Routes.LeaguesList}/:leagueID`, authenticate.token, leaguesController.load);
 router.post(`/${Routes.LeaguesList}/:leagueID`, authenticate.token, leaguesController.join);
-//------------ Get/POST /leagues/attend/:leagueID -> attend a drawn game in the league
-router.get(`/${Routes.Attend}/:leagueID`, authenticate.token, leaguesController.attend);
 
-// for admin 
+// for admin
 router.post(`/${Routes.NewLeague}`, authenticate.token, authenticate.admin, authenticate.password, leaguesController.create);
 
 module.exports = router;
