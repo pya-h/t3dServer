@@ -1,5 +1,6 @@
-const Port = 8080,
-    Host = "localHost",
+const Port = process.env.PORT || 8080,
+    // Host = "mehrzadco.com/t3d",
+    Host = "localhost",
     isHttps = true;
 
 // other previously used Host:
@@ -32,7 +33,6 @@ module.exports = {
     Leagues: "leagues",
     NewLeague: "new",
     LeaguesList: "list",
-    Attend: "attend",
     Chats: "chats",
     SingleChat: "single",
     Interactions: "interact",

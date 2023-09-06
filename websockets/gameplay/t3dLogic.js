@@ -1,4 +1,4 @@
-const GAME_STATUS = { WIN: 3, DRAW: 1, LOSE: 0 };
+const { GameStatusScores } = require('../../configs/game');
 const { updateRecords } = require("../../controllers/users");
 const { saveGame } = require("../../controllers/games");
 
@@ -92,11 +92,8 @@ const inspectAreaAroundTheCell = async(game, cell) => {
         if (totalScore > 0)
             await saveGame(
                 game.gameID,
-                game.playerX.id,
-                game.playerO.id,
-                game.playerX.score,
-                game.playerO.score,
-                true
+                game.playerX,
+                game.playerO
             );
     } catch (err) {
         console.log(err);
@@ -111,12 +108,12 @@ const evaluateAndEndGame = async(game) => {
         let xAchievement = undefined,
             oAchievement = undefined;
         if (playerX.score > playerO.score) {
-            xAchievement = GAME_STATUS.WIN;
-            oAchievement = GAME_STATUS.LOSE;
+            xAchievement = GameStatusScores.WIN;
+            oAchievement = GameStatusScores.LOSE;
         } else if (playerX.score < playerO.score) {
-            xAchievement = GAME_STATUS.LOSE;
-            oAchievement = GAME_STATUS.WIN;
-        } else xAchievement = oAchievement = GAME_STATUS.DRAW;
+            xAchievement = GameStatusScores.LOSE;
+            oAchievement = GameStatusScores.WIN;
+        } else xAchievement = oAchievement = GameStatusScores.DRAW;
 
         updateRecords(playerX.id, xAchievement);
         updateRecords(playerO.id, oAchievement);
@@ -125,12 +122,11 @@ const evaluateAndEndGame = async(game) => {
 
         await saveGame(
             game.gameID,
-            game.playerX.id,
-            game.playerO.id,
-            game.playerX.score,
-            game.playerO.score,
+            playerX,
+            playerO,
             false
         );
+
     } catch (err) {
         console.log(err);
         //check ...

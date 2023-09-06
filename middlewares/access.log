@@ -250,3 +250,219 @@ Content Length: 59
 Response Time: 15.118 ms
 ---------------------------------------------------
 
+Wed Sep 06 2023 14:01:04 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":11111111}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 5.877 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 14:01:21 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66606660}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 4.777 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:16:30 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZTc3YTY3MTgzNTAwMWVlMjEzYTZlIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTcxLCJleHAiOjE2OTQ2MDUzNzF9.7ClCreFx50UiIiscHCo4qode56RNREzVwMJCKzz-TZY"
+User Requested: {"id":"63ce77a671835001ee213a6e","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 24.640 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:16:30 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZTc3YTY3MTgzNTAwMWVlMjEzYTZlIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTcxLCJleHAiOjE2OTQ2MDUzNzF9.7ClCreFx50UiIiscHCo4qode56RNREzVwMJCKzz-TZY"
+User Requested: {"id":"63ce77a671835001ee213a6e","admin":false}
+Payload: {}
+URL: /leagues/list/63ce785671835001ee213ab8
+Status Code: 404
+Error Message: "No league has been found"
+Content Length: 38
+Response Time: 69.520 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:16:32 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNjZTc3YTY3MTgzNTAwMWVlMjEzYTZlIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTcxLCJleHAiOjE2OTQ2MDUzNzF9.7ClCreFx50UiIiscHCo4qode56RNREzVwMJCKzz-TZY"
+User Requested: {"id":"63ce77a671835001ee213a6e","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 3.034 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:18:56 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 3.599 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:18:56 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 2.200 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:18:56 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /users/private/credentials
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 5.804 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:18:56 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /chats/interact
+Status Code: 404
+Error Message: "No user with this id has been found"
+Content Length: 49
+Response Time: 4.384 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:19:00 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 3.072 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:19:00 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /users/private/credentials
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 3.138 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:19:00 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 3.695 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:19:00 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /chats/interact
+Status Code: 404
+Error Message: "No user with this id has been found"
+Content Length: 49
+Response Time: 4.378 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:19:01 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwMzllMmQwNDU0N2U0MGY0NjMzNzc4IiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwNTYxLCJleHAiOjE2OTQ2MDUzNjF9.FMTwnLDDZoyvtyJgU1KX5bGYnrDD510p13Bkb9IRkgQ"
+User Requested: {"id":"64039e2d04547e40f4633778","admin":false}
+Payload: {}
+URL: /users/private
+Status Code: 404
+Error Message: "No user has been found"
+Content Length: 36
+Response Time: 8.795 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 15:54:38 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmODY2ZjhkNTNmOThlNmJiOTY4ODZiIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwODg4LCJleHAiOjE2OTQ2MDU2ODh9.KtXkX27m7YBRZvz8bDFe_UXE4L2yt0ZwOWibRynZ4co"
+User Requested: {"id":"64f866f8d53f98e6bb96886b","admin":false}
+Payload: {}
+URL: /leagues/list/64f86af6ecb7366bed95d23d
+Status Code: 404
+Error Message: "No league has been found"
+Content Length: 38
+Response Time: 17.046 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 16:09:04 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmODY2ZDlkNTNmOThlNmJiOTY4ODYxIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwODU3LCJleHAiOjE2OTQ2MDU2NTd9.AEBL2eTa596K87IhdJGDon4nzij5J9ViS70cTASX6wg"
+User Requested: {"id":"64f866d9d53f98e6bb968861","admin":false}
+Payload: {}
+URL: /leagues/list/64f86f9b77095f9f8e4c0104
+Status Code: 404
+Error Message: "No league has been found"
+Content Length: 38
+Response Time: 12.204 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 16:09:04 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmODY2ZDlkNTNmOThlNmJiOTY4ODYxIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwODU3LCJleHAiOjE2OTQ2MDU2NTd9.AEBL2eTa596K87IhdJGDon4nzij5J9ViS70cTASX6wg"
+User Requested: {"id":"64f866d9d53f98e6bb968861","admin":false}
+Payload: {}
+URL: /leagues/list/64f86f9b77095f9f8e4c0104
+Status Code: 404
+Error Message: "No league has been found"
+Content Length: 38
+Response Time: 4.734 ms
+---------------------------------------------------
+
+Wed Sep 06 2023 16:09:07 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjRmODY2ZDlkNTNmOThlNmJiOTY4ODYxIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNjk0MDAwODU3LCJleHAiOjE2OTQ2MDU2NTd9.AEBL2eTa596K87IhdJGDon4nzij5J9ViS70cTASX6wg"
+User Requested: {"id":"64f866d9d53f98e6bb968861","admin":false}
+Payload: {}
+URL: /leagues/list/64f86f9b77095f9f8e4c0104
+Status Code: 404
+Error Message: "No league has been found"
+Content Length: 38
+Response Time: 4.519 ms
+---------------------------------------------------
+
