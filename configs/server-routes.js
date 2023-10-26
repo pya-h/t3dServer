@@ -1,12 +1,7 @@
 const Port = process.env.PORT || 8080,
-    // Host = "mehrzadco.com/t3d",
+    // Host = "pheelstyle.ir/t3d",
     Host = "localhost",
     isHttps = true;
-
-// other previously used Host:
-// const Host = t3d.iran.liara.runl;
-// const Host = t3dweb.herokuapp.com;
-// const Host = "onlinepricer.fun:${Port}";
 
 //server routes
 module.exports = {

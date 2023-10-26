@@ -1,6 +1,7 @@
 const UserModel = require('../../../models/users');
 const { Routes, StatusCodes } = require("../../../configs");
 const fs = require('fs');
+const getAvatarPath = require('./getAvatarPath');
 // get user public info == player records
 
 module.exports = async(playerID) => {
@@ -10,17 +11,8 @@ module.exports = async(playerID) => {
         error.statusCode = StatusCodes.NotFound;
         throw error;
     }
-    const supposedAvatar = `${userFound._id.toString()}.jpg`;
-    let avatar = `${Routes.HttpRoot}/${Routes.Avatars}/`;
-    try {
-        await fs.promises.access(`./public/${Routes.Avatars}/${supposedAvatar}`);
-        avatar += supposedAvatar;
-        // if player has avatar send then
-    } catch (error) {
-        avatar += 'no-avatar.png';
-        // if player doesnt have an avatar yet send 'no-avatar' image to client
-    }
-
+    const avatar = await getAvatarPath(`${userFound._id.toString()}.jpg`);
+    console.log(avatar)
     return {
         userID: userFound._id.toString(),
         fullname: userFound.fullname,

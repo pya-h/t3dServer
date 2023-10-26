@@ -65,8 +65,13 @@ const roomid = (uid1, uid2) => //create a room uuid for each game
 
 const informRoommates = (room, command) => {
     t3dRooms[room.name].players.forEach((cid) => {
-        onlines[cid].room = room;
-        onlines[cid].socket.send(command);
+        try {
+
+            onlines[cid].room = room;
+            onlines[cid].socket.send(command);
+        } catch (ex) {
+            console.log(`Cannot inform ${cid}`, ex);
+        }
     });
 };
 
