@@ -1,8 +1,11 @@
 const WebSocket = require("ws");
 const { makeFriends } = require('../../controllers/users');
 const LeagueModel = require("../../models/leagues");
+const GameModel = require("../../models/games");
 const { createGame } = require("../../controllers/games");
 const { saveMessage } = require('../../controllers/chats');
+const StatusCodes = require('../../configs/status');
+
 var onlines = []; //keys: clientID, values: game type and socket
 // onlines['clientID'] = {gamedimension: int, room: string}
 // .dimension is NOT NULL and .room is null ==> player is online
@@ -90,7 +93,6 @@ const roomForCorrespondingOngoingLeagueMatch = async(userID, leagueID) => {
     );
     if (correspondingMatch) {
         if (new Date(correspondingMatch.schedule) <= new Date()) { // meaning that the game time has started
-            console.log("gathering data for user");
             const { players } = correspondingMatch;
             if (!correspondingMatch.game) {
                 // if this player is the first attendant
@@ -101,10 +103,21 @@ const roomForCorrespondingOngoingLeagueMatch = async(userID, leagueID) => {
 
             } // else: just send the gameID to the requester, if the game is not expired
             else {
-                // check game game not passed an hour
-                // check game is still live (isLive)
-                // and check other things like players in the game field to math the league data
+                // TODO: check game game not passed an hour
+                // TODO: check game is still live (isLive)
+                // TODO: and check other things like players in the game field to math the league data
+                const theGame = await GameModel.findById(correspondingMatch.game);
+                if (!theGame) {
+                    // TODO: What to do here?
+                    // TODO: maybe we should create the game field with this id and continue
 
+                }
+                if (!theGame.isLive) {
+                    const error = new Error("This game has ended before!");
+                    error.message = "This game has ended before!";
+                    error.statusCode = StatusCodes.GameEnded;
+                    throw error;
+                }
             }
             return {
                 gameID: correspondingMatch.game.toString(),
@@ -116,12 +129,14 @@ const roomForCorrespondingOngoingLeagueMatch = async(userID, leagueID) => {
         } else {
             const error = new Error("Game is not started yet!");
             error.statusCode = StatusCodes.NotStartedYet;
+            error.message = "Game is not started yet!";
             throw error;
         }
     } else {
         const error = new Error(
             "No match has been found for this user in this league!"
         );
+        error.message = "No match has been found for this user in this league!";
         error.statusCode = StatusCodes.MatchNotFound;
         throw error;
     }
@@ -281,23 +296,34 @@ module.exports.Server = (path) => {
                                 break;
                             }
                         case "attend_league_game":
-                            { // MAYBE WRITE THEIS WITH .then .catch
+                            { // TODO: MAYBE WRITE THEIS WITH .then .catch
                                 (async() => {
-                                    const { leagueId } = msg;
-                                    const room = await roomForCorrespondingOngoingLeagueMatch(clientID, leagueId);
-                                    if (room) {
-                                        room.name = roomid(room.players[0], room.players[1]);
-                                        t3dRooms[room.name] = room;
+                                    try {
 
-                                        // now onform both clients
-                                        informRoommates(room, createSocketCommand("ATTEND_LEAGUE_GAME", {
-                                            room,
-                                            stats: {
-                                                players: Object.keys(onlines).length,
-                                                games: Object.keys(t3dRooms).length
-                                            }
-                                        }));
+                                        const { leagueId } = msg;
+                                        const room = await roomForCorrespondingOngoingLeagueMatch(clientID, leagueId);
+                                        if (room) {
+                                            room.name = roomid(room.players[0], room.players[1]);
+                                            t3dRooms[room.name] = room;
+
+                                            // now onform both clients
+                                            informRoommates(room, createSocketCommand("ATTEND_LEAGUE_GAME", {
+                                                room,
+                                                stats: {
+                                                    players: Object.keys(onlines).length,
+                                                    games: Object.keys(t3dRooms).length
+                                                }
+                                            }));
+                                        }
+                                    } catch (err) {
+                                        // TODO: Error message isnt send! what to do?
+                                        socket.send(
+                                            createSocketCommand("GAME_ATTEND_FAILURE", {
+                                                reason: err
+                                            })
+                                        );
                                     }
+
                                 })();
                                 break;
 

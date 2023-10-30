@@ -205,8 +205,6 @@ module.exports.Server = (path) => {
                             rooms[rname].playerX = { id: playerID, socket, score: 0 };
                         } else if (!rooms[rname].playerO.id && playerID !== rooms[rname].playerX.id) {
                             rooms[rname].playerO = { id: playerID, socket, score: 0 };
-                            //temp
-                            //log_memory_usage();
                         }
                         if (!rooms[rname].gameID && gameID)
                             rooms[rname].gameID = gameID;
