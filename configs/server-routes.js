@@ -1,7 +1,7 @@
 const Port = process.env.PORT || 8080,
     // Host = "pheelstyle.ir/t3d",
     Host = "localhost",
-    isHttps = true;
+    isHttps = false;
 
 //server routes
 module.exports = {

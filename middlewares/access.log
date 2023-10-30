@@ -466,3 +466,99 @@ Content Length: 38
 Response Time: 4.519 ms
 ---------------------------------------------------
 
+Sun Oct 29 2023 03:18:17 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66606660}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 217.530 ms
+---------------------------------------------------
+
+Sun Oct 29 2023 03:18:45 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66606660,"email":"pedram@h","fullname":"الیوت آلدرسون"}
+URL: /users/signup
+Status Code: 422
+Error Message: "Payload validation failed."
+Content Length: 132
+Response Time: 9.275 ms
+---------------------------------------------------
+
+Mon Oct 30 2023 12:47:25 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":66606660}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.145 ms
+---------------------------------------------------
+
+Mon Oct 30 2023 12:47:36 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":94413062}
+URL: /users/signin
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 320.354 ms
+---------------------------------------------------
+
+Mon Oct 30 2023 12:48:05 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":41904190}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.792 ms
+---------------------------------------------------
+
+Mon Oct 30 2023 12:52:58 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345670}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.041 ms
+---------------------------------------------------
+
+Mon Oct 30 2023 12:53:07 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":23456789}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 3.147 ms
+---------------------------------------------------
+
+Mon Oct 30 2023 12:53:42 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "null"
+User Requested: undefined
+Payload: {"studentID":12345677}
+URL: /users/signin
+Status Code: 403
+Error Message: "A user with this studentID could not be found"
+Content Length: 59
+Response Time: 2.377 ms
+---------------------------------------------------
+
