@@ -29,7 +29,7 @@ const updateClientConnection = (currentRoom, client, newSocket, myTurn) => {
 };
 
 const sendNextMoveTo = async(rname, madeBy, nextMove, nextTurn) => {
-    const { table, dimension, playerX, playerO, turn } = rooms[rname];
+    const { table, dimension, playerX, playerO, turn, scoreless } = rooms[rname];
     const cell = ({ floor, row, column } = T3DLogic.getCellCoordinates(nextMove, dimension));
     console.log(`GAMEPLAY:\tmove made by player:${madeBy} now is sending to opponent`);
     try {
@@ -67,7 +67,7 @@ const sendNextMoveTo = async(rname, madeBy, nextMove, nextTurn) => {
             })
 
             if (!rooms[rname].gameID) {
-                const { gameID } = await createGame(playerX.id, playerO.id, dimension, true);
+                const { gameID } = await createGame(playerX.id, playerO.id, dimension, scoreless);
                 rooms[rname].gameID = gameID.toString();
 
                 [playerX, playerO].forEach(eachPlayer => {

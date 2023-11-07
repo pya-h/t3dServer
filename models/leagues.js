@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const leaguesSchema = new Schema({
-    _mode: {
+    mode: {
         type: Number,
         default: 0 //0 => X-O kickoutCup
     },
-    _type: { // league game type
+    type: { // league game type
         scoreless: {
             type: Boolean,
             default: false,
@@ -22,6 +22,11 @@ const leaguesSchema = new Schema({
     title: {
         type: String,
         required: true,
+    },
+    details: {
+        type: String,
+        required: false,
+        default: null
     },
     contesters: [{
         player: {

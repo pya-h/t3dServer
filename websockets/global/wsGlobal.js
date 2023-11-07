@@ -97,7 +97,7 @@ const roomForCorrespondingOngoingLeagueMatch = async(userID, leagueID) => {
             if (!correspondingMatch.game) {
                 // if this player is the first attendant
                 // get a room
-                const { gameID } = await createGame(players[0], players[1], league._type.dimension, true, leagueID);
+                const { gameID } = await createGame(players[0], players[1], league.type.dimension, league.type.scoreless, leagueID);
                 correspondingMatch.game = gameID;
                 await league.save();
 
@@ -123,8 +123,8 @@ const roomForCorrespondingOngoingLeagueMatch = async(userID, leagueID) => {
                 gameID: correspondingMatch.game.toString(),
                 leagueID,
                 players,
-                dimension: league._type.dimension,
-                scoreless: league._type.scoreless
+                dimension: league.type.dimension,
+                scoreless: league.type.scoreless
             };
         } else {
             const error = new Error("Game is not started yet!");

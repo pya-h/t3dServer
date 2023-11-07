@@ -21,11 +21,11 @@ const chunkify = (list) => {
     }
     return chunky;
 }
-module.exports = (_mode, _type, contesters) => {
+module.exports = (mode, type, contesters) => {
     // plan and draw all games for each round
     const draws = [];
 
-    if (_mode === 0) { // kickout cup mode
+    if (mode === 0) { // kickout cup mode
         if (contesters.length % 2) { // if number of contesters if an odd number
             const error = new Error("Wrong number of contesters; kickout cup must have even number of contesters");
             error.statusCode = StatusCodes.MethodNotAllowed; //edit, creat new code for this?
