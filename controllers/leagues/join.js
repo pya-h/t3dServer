@@ -26,9 +26,9 @@ module.exports = async(req, res, next) => {
             // if (league.contesters.length === league.capacity) {
             //     // sign up for league is completed
             //     // call a planning algorythm to plan first round games of the league
-            //     const { _mode, _type, contesters } = league;
+            //     const { mode, type, contesters } = league;
 
-            //     const currentRountDrawsAsPromised = [draw(_mode, _type.dimension, contesters)];
+            //     const currentRountDrawsAsPromised = [draw(mode, type.dimension, contesters)];
             //     // draws for this round have been returned as promises; so they need to be handled by .then .catch
             //     Promise.all(currentRountDrawsAsPromised).then(promises => {
             //         for (const rawDraws of promises) {
@@ -52,10 +52,10 @@ module.exports = async(req, res, next) => {
             if (league.contesters.length === league.capacity) {
                 // sign up for league is completed
                 // call a planning algorythm to plan first round games of the league
-                const { _mode, _type, contesters } = league;
+                const { mode, type, contesters } = league;
 
                 try {
-                    const firstRoundDraws = draw(_mode, _type.dimension, contesters);
+                    const firstRoundDraws = draw(mode, type.dimension, contesters);
                     // draws for this round have been returned as promises; so they need to be handled by .then .catch
                     console.log(firstRoundDraws);
                     // const draws = firstRoundDraws.map(game => game.gameID);

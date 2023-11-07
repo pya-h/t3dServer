@@ -3,7 +3,7 @@ const LeagueModel = require("../../models/leagues");
 const mongoose = require("mongoose");
 const { StatusCodes } = require("../../configs");
 //module.exports = async (req, res, next) => {
-module.exports = async(playerX, playerO, Type, isLive = true, leagueID = null) => {
+module.exports = async(playerX, playerO, Type, scoreless = false, leagueID = null, date = new Date(), isLive = true) => {
     try {
         // check data another time to make sure
         // userIDs may be changed ==> must be
@@ -17,9 +17,10 @@ module.exports = async(playerX, playerO, Type, isLive = true, leagueID = null) =
 
         const newGame = new GameModel({
             players: [playerX, playerO].map(each => { return { self: mongoose.Types.ObjectId(each), score: 0 } }),
-            _type: Type,
-            date: new Date(),
+            type: Type,
+            scoreless,
             isLive,
+            date,
             league: leagueID ? mongoose.Types.ObjectId(leagueID) : null
         });
         await newGame.save();

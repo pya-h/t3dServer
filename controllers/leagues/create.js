@@ -2,17 +2,18 @@ const LeagueModel = require("../../models/leagues");
 
 module.exports = async(req, res, next) => {
     try {
-        const { Mode, title, capacity, prize, scoreless, dimension } = req.body;
+        const { Mode, title, capacity, prize, scoreless, dimension, details } = req.body;
         const league = new LeagueModel({
-            _mode: Mode,
-            _type: {
+            mode: Mode,
+            type: {
                 scoreless,
                 dimension
             },
             title,
             contesters: [],
             capacity,
-            prize
+            prize,
+            details
         });
         await league.save();
         res.status(201).json({ msg: 'league created successfully' });

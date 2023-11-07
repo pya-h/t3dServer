@@ -10,7 +10,7 @@ module.exports = async(gameID, X, O, isLive = true) => {
             error.statusCode = StatusCodes.NotFound;
             throw error;
         }
-
+        let gameEnded = game.isLive && !isLive; // last save
         // update game
         // verification step:
         // 1. gameID verification
@@ -33,8 +33,8 @@ module.exports = async(gameID, X, O, isLive = true) => {
 
         await game.save();
 
-        // console.log(game.league);
-        if (game.league) {
+        // TODO: move this code to league controller
+        if (game.league && gameEnded) {
             for (let i = 0; i < game.players.length; i++) {
                 const ci = game.league.contesters.findIndex(
                     (c) =>
@@ -54,7 +54,7 @@ module.exports = async(gameID, X, O, isLive = true) => {
 
                     // calculate CONTESTER SCORE  based on the league type and the number of wins and draws
                     // score = wins * 3 + draws?
-                    if (game.league._mode > 0) {
+                    if (game.league.mode > 0) {
                         // mode 0 is the kickout league that score is not important there!
                         game.league.contesters[ci].progress.score =
                             game.league.contesters[ci].progress.wins *

@@ -8,7 +8,7 @@ module.exports = async(req, res, next) => {
             .map((game) => {
                 return {
                     gameID: game._id.toString(),
-                    Type: game._type,
+                    Type: game.type,
                     date: game.date,
                     players: game.players.map((player) => {
                         return {
@@ -17,6 +17,7 @@ module.exports = async(req, res, next) => {
                         };
                     }),
                     isLive: game.isLive,
+                    scoreless: game.scoreless
                 };
             });
 

@@ -20,8 +20,8 @@ module.exports = async(req, res, next) => {
                 }),
                 capacity: league.capacity,
                 prize: league.prize,
-                Mode: league._mode,
-                Type: league._type
+                Mode: league.mode,
+                Type: league.type
             }
         });
         res.status(200).json({ leagues });
