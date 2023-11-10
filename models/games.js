@@ -25,11 +25,20 @@ const gameSchema = new Schema({
         type: Boolean,
         default: true
     },
+    // TODO: Check this is necessary?
+    finished: {
+        type: Boolean,
+        default: false
+    },
 
     league: {
         type: Schema.Types.ObjectId,
         ref: "Leagues",
         default: null
+    },
+    winnerIndex: { // winner index in contesters list
+        type: Number,
+        default: -1 // -1 means None/draw
     }
 });
 

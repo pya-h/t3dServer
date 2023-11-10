@@ -62,7 +62,7 @@ const leaguesSchema = new Schema({
         type: Date,
         default: new Date()
     },
-    matches: [ // each round draws
+    matches: [ // all rounds
         [
             // each round's draws
             {
@@ -72,9 +72,9 @@ const leaguesSchema = new Schema({
                 },
                 players: [{
                     // IDs of the players that have been matched
-                    type: String,
-                    required: true,
-                    unique: true
+                    type: Schema.Types.ObjectId,
+                    ref: "Users",
+                    required: true
                 }],
                 game: {
                     type: Schema.Types.ObjectId,
@@ -97,10 +97,20 @@ const leaguesSchema = new Schema({
         default: 20,
         required: true
     },
+    currentRound: { // according to matches list
+        type: Number,
+        default: 0,
+        required: true
+    },
     prize: {
         type: Number,
         default: 50,
         required: true
+    },
+    champion: {
+        type: Schema.Types.ObjectId,
+        ref: "Users",
+        default: null
     }
 });
 

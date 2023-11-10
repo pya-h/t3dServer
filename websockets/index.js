@@ -1,8 +1,8 @@
 const GamePlayWebSocket = require("./gameplay/wsGamePlay");
 const GlobalWebSocket = require("./global/wsGlobal");
-const url = require('url');
-const { Routes, WebSocketConfig } = require("../configs");
-const cron = require('node-cron');
+const { parse } = require('url');
+const { Routes } = require("../configs");
+const { schedule } = require('node-cron');
 
 const globalWebSocketDirectRoute = `/${Routes.webSocketRoute}/${Routes.wsGlobalRoute}`,
     gamePlayWebSocketDirectRoute = `/${Routes.webSocketRoute}/${Routes.wsGamePlayRoute}`;
@@ -10,11 +10,10 @@ const globalWebSocketDirectRoute = `/${Routes.webSocketRoute}/${Routes.wsGlobalR
 let wsGlobalServer = GlobalWebSocket.Server(globalWebSocketDirectRoute),
     wsGamePlayServer = GamePlayWebSocket.Server(gamePlayWebSocketDirectRoute);
 
-
-cron.schedule('0 0 */1 * * *', () => { // hourly interval for removing games that are 
+schedule('0 0 */1 * * *', () => { // hourly interval for removing games that are 
     try {
         wsGamePlayServer.collectGarbage(); //just call collect garbage in wsGameplay and sync via closeThisRoom in wsGlobal?
-        console.log('hourly garbage collected');
+        console.log('hourly garbage collected at ' + (new Date()).toUTCString());
     } catch (err) {
         console.log(err);
     }
@@ -24,7 +23,7 @@ module.exports = {
 
     bindSocketsToMainServer: (server) => {
         server.on("upgrade", (request, socket, head) => {
-            const pathname = url.parse(request.url).pathname;
+            const pathname = parse(request.url).pathname;
             if (pathname === globalWebSocketDirectRoute) {
                 wsGlobalServer.handleUpgrade(request, socket, head, (websocket) => {
 

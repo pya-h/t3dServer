@@ -124,7 +124,7 @@ const evaluateAndEndGame = async(game) => {
             game.gameID,
             playerX,
             playerO,
-            false
+            true //finished
         );
 
     } catch (err) {

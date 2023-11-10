@@ -1,8 +1,7 @@
-const GAME_STATUS = { WIN: 3, DRAW: 1, LOSE: 0 };
 const { StatusCodes } = require("../../../configs");
 const UserModel = require("../../../models/users");
-
-//folder description: Modules that are called ONLY by server and cannot be called by http requests
+const { GameStatusScores } = require('../../../configs/game')
+    //folder description: Modules that are called ONLY by server and cannot be called by http requests
 
 module.exports = async(userID, achievement) => {
     try {
@@ -14,13 +13,13 @@ module.exports = async(userID, achievement) => {
         }
 
         switch (achievement) {
-            case GAME_STATUS.WIN:
+            case GameStatusScores.WIN:
                 userFound.records.wins++;
                 break;
-            case GAME_STATUS.DRAW:
+            case GameStatusScores.DRAW:
                 userFound.records.draws++;
                 break;
-            case GAME_STATUS.LOSE:
+            case GameStatusScores.LOSE:
                 userFound.records.loses++;
                 break;
             default:

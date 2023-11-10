@@ -28,8 +28,9 @@ module.exports = async(req, res, next) => {
             capacity: leagueFound.capacity,
             prize: leagueFound.prize,
             Mode: leagueFound.mode,
-            Type: leagueFound.type
-
+            Type: leagueFound.type,
+            round: leagueFound.currentRound,
+            championIndex: leagueFound.championIndex
         }
         res.status(200).json({ league });
     } catch (err) {

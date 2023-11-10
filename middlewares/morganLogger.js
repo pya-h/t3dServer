@@ -1,12 +1,11 @@
 const morgan = require("morgan");
-const fs = require("fs");
+const { createWriteStream } = require("fs");
 const path = require("path");
 
 
 // create a write stream (in append mode)
-const accessLogStream = fs.createWriteStream(
-    path.join(__dirname, "access.log"),
-    {
+const accessLogStream = createWriteStream(
+    path.join(__dirname, "access.log"), {
         flags: "a",
     }
 );
@@ -32,8 +31,8 @@ exports.morganLogger = morgan(
             `Response Time: ${tokens["response-time"](req, res)} ms`,
             "---------------------------------------------------\n",
         ].join("\n");
-    },
-    { stream: accessLogStream,
+    }, {
+        stream: accessLogStream,
         skip: (req, res) => { return res.statusCode < 400 }
     }
 );

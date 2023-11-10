@@ -22,6 +22,7 @@ module.exports = {
     LeagueNotFound: 432,
     MatchNotFound: 433,
     NotStartedYet: 434,
+    NonOfYourBusinessMatch: 437, // the game that doesnt contain the requester id as a plyer
     GameEnded: 435,
     NonSenseToken: 465,
     ForgedToken: 466,
