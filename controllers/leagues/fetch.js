@@ -1,7 +1,7 @@
 const LeagueModel = require("../../models/leagues");
 
 module.exports = async(req, res, next) => {
-    // fetch all ongoing leagues
+    // fetch all ongoing leagues, used while listing all leagues
     try {
         const leagues = (await LeagueModel.find().populate('contesters.player') /*.populate('contesters.team')*/ ).map((league) => {
             // populate teams in future
@@ -9,8 +9,10 @@ module.exports = async(req, res, next) => {
                 leagueID: league._id.toString(),
                 title: league.title,
                 started: league.started,
+                finished: leagueFound.finished,
                 contesters: league.contesters.map(contester => {
                     return {
+                        // TODO: remove unneeded fields
                         fullname: contester.player.fullname,
                         records: contester.player.records,
                         team: contester.team,
@@ -22,7 +24,7 @@ module.exports = async(req, res, next) => {
                 prize: league.prize,
                 Mode: league.mode,
                 Type: league.type,
-                championIndex: league.championIndex
+                champion: league.champion
 
             }
         });
