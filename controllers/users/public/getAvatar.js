@@ -1,5 +1,3 @@
-const { Routes } = require("../../../configs");
-const fs = require('fs');
 const getAvatarPath = require('../internal/getAvatarPath');
 
 module.exports = async(req, res, next) => {

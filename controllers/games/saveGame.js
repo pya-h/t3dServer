@@ -1,29 +1,28 @@
 const { StatusCodes, GameRules } = require("../../configs");
 const GameModel = require("../../models/games");
 
-module.exports = async(gameID, X, O, isLive = true) => {
+module.exports = async(gameID, X, O, finished = false, isLive = true) => {
     try {
-        console.log(gameID);
         let game = await GameModel.findById(gameID).populate("league");
         if (!game) {
             const error = new Error("No game with this id has been found");
             error.statusCode = StatusCodes.NotFound;
             throw error;
         }
-        let gameEnded = game.isLive && !isLive; // last save
         // update game
         // verification step:
         // 1. gameID verification
         // 2. X.id && O.id verif
         // use foreach, but first check if foreach paraneter is byRef pr byVal
-        if (
+        if ( //fix bug
             X.id === game.players[0].self.toString() && //its not populated => so .self is actually the id
             O.id === game.players[1].self.toString() && //check player IDs are true- otherwise request is unauthorized
             game.isLive // when isLive is set to false means game ended and there is no updating accepted
         ) {
             game.players[0].score = X.score;
             game.players[1].score = O.score;
-            game.isLive = isLive;
+            game.isLive = !finished ? isLive : false;
+            game.finished = finished;
         } else {
             const error = new Error("Unauthorized request");
             error.statusCode = StatusCodes.Forbidden; //means forbidden:
@@ -34,11 +33,11 @@ module.exports = async(gameID, X, O, isLive = true) => {
         await game.save();
 
         // TODO: move this code to league controller
-        if (game.league && gameEnded) {
+        if (game.league && finished) {
+
             for (let i = 0; i < game.players.length; i++) {
                 const ci = game.league.contesters.findIndex(
-                    (c) =>
-                    c.player.toString() === game.players[i].self.toString()
+                    (c) => c.player.toString() === game.players[i].self.toString()
                 );
                 if (ci !== -1) {
                     const j = (i + 1) % 2; // other player's index
@@ -66,10 +65,13 @@ module.exports = async(gameID, X, O, isLive = true) => {
                     }
                     // console.log(game.league.contesters[ci]);
                 }
-
                 await game.league.save();
-                await game.save();
             }
+
+            game.winnerIndex = game.players[0].score > game.players[1].score ? 0 : (
+                game.players[1].score > game.players[0].score ? 1 : -1
+            );
+            await game.save();
             // console.log(game);
             // res.status(200).json({ message: "game result updated." });
         }

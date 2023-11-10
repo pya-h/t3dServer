@@ -1,6 +1,6 @@
 const WebSocket = require("ws");
 const T3DLogic = require("./t3dLogic");
-const { createGame } = require("../../controllers/games");
+const { getGame, createGame } = require("../../controllers/games");
 const { GameRules } = require('../../configs');
 const authenticate = require("../../middlewares/authenticate");
 const sizeof = require('object-sizeof');
@@ -201,16 +201,54 @@ module.exports.Server = (path) => {
                         }
 
                         //initiatilize room and players
-                        if (!rooms[rname].playerX.id && playerID !== rooms[rname].playerO.id) {
-                            rooms[rname].playerX = { id: playerID, socket, score: 0 };
-                        } else if (!rooms[rname].playerO.id && playerID !== rooms[rname].playerX.id) {
-                            rooms[rname].playerO = { id: playerID, socket, score: 0 };
-                        }
-                        if (!rooms[rname].gameID && gameID)
-                            rooms[rname].gameID = gameID;
+                        if (gameID && leagueID) {
+                            // this code is for league section, to check that the order of players array is the same as [X, O]
+                            (async() => {
+                                try {
 
-                        if (!rooms[rname].leagueID && leagueID)
-                            rooms[rname].leagueID = leagueID;
+                                    // TODO: What if gameID or leagueID differs from the original(first) one?
+                                    // use jwt token for gameID/leagueID?
+                                    if (!rooms[rname].gameID)
+                                        rooms[rname].gameID = gameID;
+                                    if (!rooms[rname].leagueID)
+                                        rooms[rname].leagueID = leagueID;
+
+                                    const game = await getGame(gameID);
+                                    // TOTHINK: User sends a fake gameID?
+                                    if (!game) {
+                                        const error = new Error("No game with this id has been found!");
+                                        error.statusCode = StatusCodes.MatchNotFound;
+                                        throw error;
+                                    }
+                                    if (game.players[0].self.toString() === playerID.toString())
+                                        rooms[rname].playerX = { id: playerID, socket, score: game.players[0].score };
+                                    else if (game.players[1].self.toString() === playerID.toString())
+                                        rooms[rname].playerO = { id: playerID, socket, score: game.players[1].score };
+                                    else {
+                                        const error = new Error("You are not a player of this match!");
+                                        error.statusCode = StatusCodes.NonOfYourBusinessMatch;
+                                        throw error;
+                                    }
+                                } catch (err) {
+                                    socket.send(
+                                        createSocketCommand("GAME_ATTEND_FAILURE", {
+                                            reason: err
+                                        })
+                                    );
+                                }
+                            })();
+                        } else {
+                            // normal games outside of the leageus
+                            // cause: The order of players in normal games is determined by the first attendant
+                            // so the first one is X, and second one is O; but in leagues the order is predetermined while drawing the league rounds
+                            if (gameID && !rooms[rname].gameID)
+                                rooms[rname].gameID = gameID;
+                            if (!rooms[rname].playerX.id && playerID !== rooms[rname].playerO.id) {
+                                rooms[rname].playerX = { id: playerID, socket, score: 0 };
+                            } else if (!rooms[rname].playerO.id && playerID !== rooms[rname].playerX.id) {
+                                rooms[rname].playerO = { id: playerID, socket, score: 0 };
+                            }
+                        }
 
                         const { playerX, playerO, lastMove } = rooms[rname];
                         // update connections

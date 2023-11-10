@@ -9,11 +9,10 @@ const leaguesRoutes = require("./routes/leagues");
 const chatsRoutes = require("./routes/chats");
 const noticesRoutes = require("./routes/notices");
 const { bindSocketsToMainServer } = require("./websockets");
-const { createServer } = require("http");
+const { createServer } = require("https");
 const fs = require('fs');
 const { morganLogger } = require("./middlewares/morganLogger");
 const { Routes } = require("./configs");
-
 const app = express();
 
 //──── Static Folder
@@ -31,22 +30,26 @@ app.use(`/${Routes.Games}`, gamesRoutes);
 app.use(`/${Routes.Leagues}`, leaguesRoutes);
 app.use(`/${Routes.Notices}`, noticesRoutes);
 app.use(`/${Routes.Chats}`, chatsRoutes);
+
 //---- WebSocket && https
 const options = {
     key: fs.readFileSync('./configs/key.pem'),
     cert: fs.readFileSync('./configs/cert.pem')
 };
-const server = createServer(app);
+
+const server = createServer(options, app);
+
 bindSocketsToMainServer(server);
 
 //error handler: must be put after all middlewares
 app.use(errorHandler);
+
 //──── Connecting To Database
 connectToDB()
     .then((result) => {
         console.log(`Connected To Database`);
         server.listen(Routes.Port, () => {
-            console.log(`Server running on PORT ${Routes.Port}`);
+            console.log(`Server running on PORT ${Routes.Port}; ${result.toString()}`);
         });
     })
     .catch((err) => {

@@ -1,4 +1,4 @@
-const bcryptjs = require("bcryptjs");
+const { hash } = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const UserModel = require("../../../models/users");
 const { generateToken } = require("../../../middlewares/authenticate");
@@ -27,7 +27,7 @@ module.exports = async(req, res, next) => {
             throw error;
         }
 
-        const hashedPassword = await bcryptjs.hash(password, SALT_LENGTH);
+        const hashedPassword = await hash(password, SALT_LENGTH);
         const userCount = await UserModel.find().countDocuments();
         let user = new UserModel({
             studentID,

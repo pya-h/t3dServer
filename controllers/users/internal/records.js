@@ -1,6 +1,5 @@
 const UserModel = require('../../../models/users');
-const { Routes, StatusCodes } = require("../../../configs");
-const fs = require('fs');
+const { StatusCodes } = require("../../../configs");
 const getAvatarPath = require('./getAvatarPath');
 // get user public info == player records
 

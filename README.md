@@ -1,8 +1,8 @@
 # T3D WebServer
 # Language: Node.js
 backend part of the tic tac toe 3d
-front repo: https://github.com/pya-h/t3dClient
-front demo: https://pya-h.github.io/t3d
+Client side repo: https://github.com/pya-h/t3dClient
+Client side demo: https://pya-h.github.io/t3d
 
 # Features:
 * random game

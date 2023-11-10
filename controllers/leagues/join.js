@@ -22,42 +22,15 @@ module.exports = async(req, res, next) => {
             league.contesters.push({ player: playerID, points: 0, team: teamID }); //
             await league.save();
 
-            // // FIND A BETTER ALGO TO START PLANNING AND DRAWING**************
-            // if (league.contesters.length === league.capacity) {
-            //     // sign up for league is completed
-            //     // call a planning algorythm to plan first round games of the league
-            //     const { mode, type, contesters } = league;
-
-            //     const currentRountDrawsAsPromised = [draw(mode, type.dimension, contesters)];
-            //     // draws for this round have been returned as promises; so they need to be handled by .then .catch
-            //     Promise.all(currentRountDrawsAsPromised).then(promises => {
-            //         for (const rawDraws of promises) {
-            //             const matches = rawDraws.map(game => game.gameID);
-            //             league.matches.push([...matches]);
-            //         }
-            //         league.started = new Date();
-            //         league.save().then((result) => {
-            //             console.log("capacity fulfilled and first round of the league has been drawn successfully.");
-            //         }).catch(err => {
-            //             console.log("capacity fulfilled but first round draws failed 'cause:\n\t", err);
-
-            //         });
-
-            //     }).catch(err => {
-            //         console.log("saving draws in the leagues database failed 'cause:\t", err);
-            //     });
-            // }
-
             // FIND A BETTER ALGO TO START PLANNING AND DRAWING**************
             if (league.contesters.length === league.capacity) {
                 // sign up for league is completed
                 // call a planning algorythm to plan first round games of the league
-                const { mode, type, contesters } = league;
+                const { mode, contesters } = league;
 
                 try {
-                    const firstRoundDraws = draw(mode, type.dimension, contesters);
+                    const firstRoundDraws = draw.first(mode, contesters);
                     // draws for this round have been returned as promises; so they need to be handled by .then .catch
-                    console.log(firstRoundDraws);
                     // const draws = firstRoundDraws.map(game => game.gameID);
                     league.matches.push([...firstRoundDraws]);
                     league.started = new Date();

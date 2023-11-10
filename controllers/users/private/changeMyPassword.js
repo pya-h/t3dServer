@@ -1,6 +1,6 @@
 const { validationResult } = require("express-validator");
 const UserModel = require("../../../models/users");
-const bcryptjs = require("bcryptjs");
+const { hash } = require("bcryptjs");
 const { StatusCodes } = require("../../../configs");
 const SALT_LENGTH = 11;
 
@@ -27,7 +27,7 @@ module.exports = async(req, res, next) => {
         }
 
         //change password
-        const hashedNewPassword = await bcryptjs.hash(newPassword, SALT_LENGTH);
+        const hashedNewPassword = await hash(newPassword, SALT_LENGTH);
 
         me.password = hashedNewPassword;
 

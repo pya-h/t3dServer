@@ -29,7 +29,7 @@ function findRandomIndex(max) {
 }
 
 //temp method
-const log_memory_usage = () => {
+/*const log_memory_usage = () => {
     console.log('---------------------------global-scoket-mem-----------------------------\n');
     const online_size = +(sizeof(Object.keys(onlines)) + sizeof(Object.values(onlines))) / 1024,
         t3d_size = +(sizeof(Object.keys(t3dRooms)) + sizeof(Object.values(t3dRooms))) / 1024;
@@ -37,7 +37,7 @@ const log_memory_usage = () => {
     console.log('new game:t3d added to games room --> allocated memory:' + t3d_size + 'KB');
     console.log('total: ' + +(online_size + t3d_size) + 'KB');
     console.log('---------------------------global-scoket-mem-----------------------------\n');
-}
+}*/
 
 const findEngagedGame = (clientID) => {
     Object.keys(t3dRooms).forEach((rid) => {
@@ -89,7 +89,7 @@ const roomForCorrespondingOngoingLeagueMatch = async(userID, leagueID) => {
     // now search if attender has game in this league
     const { matches } = league;
     const correspondingMatch = matches[matches.length - 1].find((match) =>
-        match.players.find((playerID) => playerID === userID)
+        match.players.find((playerID) => playerID.toString() === userID.toString())
     );
     if (correspondingMatch) {
         if (new Date(correspondingMatch.schedule) <= new Date()) { // meaning that the game time has started
@@ -306,7 +306,7 @@ module.exports.Server = (path) => {
                                             room.name = roomid(room.players[0], room.players[1]);
                                             t3dRooms[room.name] = room;
 
-                                            // now onform both clients
+                                            // now inform both clients
                                             informRoommates(room, createSocketCommand("ATTEND_LEAGUE_GAME", {
                                                 room,
                                                 stats: {
