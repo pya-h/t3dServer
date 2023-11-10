@@ -78,7 +78,20 @@ const first = (mode, contesters) => {
                     // TODO: or what?
                     match.game.winnerIndex = +((Math.random() * 10) > 5);
                 }
+
+                // TODO: CHECK what elese should be done when dceclaring the winner
+                // For example sending a
+                // is theis .then .catch work properly?
+                previousRoundMatches[0].players[previousRoundMatches[0].game.winnerIndex].self.points += league.prize;
+                previousRoundMatches[0].players[previousRoundMatches[0].game.winnerIndex].self.save(r => {
+                    console.log(`user:${league.champion} Collected the prize of Leagu:${league._id.toString()}`);
+                }).catch(err => {
+                    console.log("Sth went wrong when declaring the champion! reason: ", err);
+                });
+
                 league.champion = previousRoundMatches[0].players[previousRoundMatches[0].game.winnerIndex].self;
+                league.finished = schedule;
+
                 // TODO: check if .then .catch works correctly!
                 league.save().then(r => {
                     console.log(`League:${league._id.toString()} Champion has been declared: user:${league.champion}`);
