@@ -1,7 +1,9 @@
 # T3D WebServer
 # Language: Node.js
 backend part of the tic tac toe 3d
+
 Client side repo: https://github.com/pya-h/t3dClient
+
 Client side demo: https://pya-h.github.io/t3d
 
 # Features:
@@ -13,6 +15,6 @@ Client side demo: https://pya-h.github.io/t3d
 * single game (play with AI)
 * profile and avatar customization
 * admin section for defining new leagues, putting notices, etc.
-* various game types, such as 3*3*3, 4*4*4, 5*5*5 game table dimensions, score-based or scoreless games
+* various game types, such as 3x3x3, 4x4x4, 5x5x5 game table dimensions, score-based or scoreless games
 * games are time sensitive
 * and some other cool featurs
