@@ -6,7 +6,7 @@ module.exports = async(req, res, next) => {
     const { leagueID } = req.params;
     try {
         const leagueFound = await LeagueModel.findById(leagueID).populate('contesters.player')
-            .populate('matches.games').populate('matches.games.players'); // CHECK: IS IT NEEDED?
+            .populate('matches.game'); //.populate('matches.game.players.self'); // CHECK: IS IT NEEDED?
         /* there are two methods here:
             1- first populate all data and sent it as a one time response. features: high traffic data; more process
             2- just send league as it is; each time user needs to see prev match ruslts he/she can send an independent request to games route.

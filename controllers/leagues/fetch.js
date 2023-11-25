@@ -9,15 +9,15 @@ module.exports = async(req, res, next) => {
                 leagueID: league._id.toString(),
                 title: league.title,
                 started: league.started,
-                finished: leagueFound.finished,
+                finished: league.finished,
                 contesters: league.contesters.map(contester => {
                     return {
                         // TODO: remove unneeded fields
                         fullname: contester.player.fullname,
-                        records: contester.player.records,
-                        team: contester.team,
-                        progress: contester.progress,
-                        userID: contester.player._id.toString()
+                        // records: contester.player.records,
+                        // team: contester.team,
+                        // progress: contester.progress,
+                        // userID: contester.player._id.toString()
                     }
                 }),
                 capacity: league.capacity,

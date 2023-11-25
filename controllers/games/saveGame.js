@@ -72,8 +72,7 @@ module.exports = async(gameID, X, O, finished = false, isLive = true) => {
                 game.players[1].score > game.players[0].score ? 1 : -1
             );
             await game.save();
-            // console.log(game);
-            // res.status(200).json({ message: "game result updated." });
+
         }
     } catch (err) {
         console.log(err);

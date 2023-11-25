@@ -682,3 +682,75 @@ Content Length: 59
 Response Time: 220.138 ms
 ---------------------------------------------------
 
+Fri Nov 24 2023 02:30:46 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /
+Status Code: 404
+Error Message: undefined
+Content Length: 139
+Response Time: 3.172 ms
+---------------------------------------------------
+
+Fri Nov 24 2023 02:43:28 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU1ZmQ5ZjUyNjdhODU5MDg2ZjYzYjZmIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE3MDA3ODA1MzQsImV4cCI6MTcwMTM4NTMzNH0.4fDwsGN7wC_FdBIhqY8MVihx_STH4LcAsrk8sDAoKlk"
+User Requested: {"id":"655fd9f5267a859086f63b6f","admin":true}
+Payload: {"title":"تست حذفی","Mode":0,"dimension":3,"scoreless":true,"capacity":"4","prize":50}
+URL: /leagues/new
+Status Code: 403
+Error Message: "Wrong password."
+Content Length: 29
+Response Time: 598.741 ms
+---------------------------------------------------
+
+Fri Nov 24 2023 02:43:52 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU1ZmQ5ZjUyNjdhODU5MDg2ZjYzYjZmIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE3MDA3ODA1MzQsImV4cCI6MTcwMTM4NTMzNH0.4fDwsGN7wC_FdBIhqY8MVihx_STH4LcAsrk8sDAoKlk"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 500
+Error Message: "leagueFound is not defined"
+Content Length: 40
+Response Time: 236.045 ms
+---------------------------------------------------
+
+Fri Nov 24 2023 02:43:56 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU1ZmQ5ZjUyNjdhODU5MDg2ZjYzYjZmIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE3MDA3ODA1MzQsImV4cCI6MTcwMTM4NTMzNH0.4fDwsGN7wC_FdBIhqY8MVihx_STH4LcAsrk8sDAoKlk"
+User Requested: undefined
+Payload: {}
+URL: /leagues
+Status Code: 500
+Error Message: "leagueFound is not defined"
+Content Length: 40
+Response Time: 587.774 ms
+---------------------------------------------------
+
+Fri Nov 24 2023 02:49:15 GMT+0330 (Iran Standard Time)
+Method: POST
+Token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU1ZmRkZTlmOWM0ZDcwZDYwYTQ4N2JiIiwiYWRtaW4iOmZhbHNlfSwiaWF0IjoxNzAwNzgxNTQ1LCJleHAiOjE3MDEzODYzNDV9.YfGlcJuieq-07_rQOtSiRhqPiAfq26tUFKxxkCK4caw"
+User Requested: {"id":"655fdde9f9c4d70d60a487bb","admin":false}
+Payload: {"teamID":null}
+URL: /leagues/list/655fdcad026e274c6c9634f6
+Status Code: 409
+Error Message: "player has joined before"
+Content Length: 38
+Response Time: 194.354 ms
+---------------------------------------------------
+
+Fri Nov 24 2023 03:01:23 GMT+0330 (Iran Standard Time)
+Method: GET
+Token: undefined
+User Requested: undefined
+Payload: {}
+URL: /
+Status Code: 404
+Error Message: undefined
+Content Length: 139
+Response Time: 3.187 ms
+---------------------------------------------------
+

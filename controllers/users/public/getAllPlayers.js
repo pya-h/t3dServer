@@ -2,7 +2,6 @@ const UserModel = require('../../../models/users');
 
 module.exports = async(req, res, next) => {
     try {
-        console.log('all');
         const players = (await UserModel.find()).map(user => { // return userID or not? is it safe?
             return {
                 userID: user._id.toString(),
