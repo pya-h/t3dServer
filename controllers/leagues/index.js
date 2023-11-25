@@ -6,11 +6,11 @@ const { schedule } = require('node-cron');
 const LeagueModel = require("../../models/leagues");
 const draw = require("./draw");
 
-schedule('* * * * *', async() => {
+schedule('4 19 * * *', async() => {
     // runs every day at 04:19 === 4 19 * * *
     try {
         console.log("starting to check leagues!");
-        const leagues = await LeagueModel.find().populate('matches.game').populate('matches.game.players');
+        const leagues = await LeagueModel.find().populate('matches.game').populate('matches.game.players.self');
         for (const league of leagues) {
             if (!league.finished && league.matches.length) {
                 const recentRound = league.matches[league.currentRound];
@@ -30,13 +30,15 @@ schedule('* * * * *', async() => {
                         if (nextRoundMatches.length) {
                             league.matches.push([...nextRoundMatches]);
                             league.currentRound++;
+                            await league.save(); // notice: at least 3 calls for saving is performed!
+                            console.log(`next round drawn for league:${league._id.toString()} done at ${(new Date()).toUTCString()}`);
                         } else {
-                            // winner declared
+                            // champion declared
                             // TODO: ???
                             // does this need league.save()?
                         }
-                        await league.save();
-                        console.log(`next round drawn for league:${league._id.toString()} done at ${(new Date()).toUTCString()}`);
+                        // prevent parallel save!
+                        // await league.save(); // notice: at least 3 calls for saving is performed!
 
                         // TODO: NOTIFY CONTESTERS
                     } catch (err) {

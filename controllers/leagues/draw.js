@@ -58,6 +58,9 @@ const first = (mode, contesters) => {
                 // the winner of first match will encounter the winner of the second match, and so on.
                 for (const match of previousRoundMatches) {
                     try {
+                        if (nextRoundMatches[nextRoundMatches.length - 1].players.length >= 2) {
+                            nextRoundMatches.push({ schedule, players: [] });
+                        }
                         // TODO: What happens if unexpectedly winnerIndex is -1?
                         if (match.game.winnerIndex < 0) {
                             // choose by throwing a coin
@@ -65,14 +68,13 @@ const first = (mode, contesters) => {
                             match.game.winnerIndex = +((Math.random() * 10) > 5);
                         }
                         nextRoundMatches[nextRoundMatches.length - 1].players.push(match.game.players[match.game.winnerIndex].self);
-                        if (nextRoundMatches[nextRoundMatches.length - 1].players.length >= 2) {
-                            nextRoundMatches.push({ schedule, players: [] });
-                        }
+
                     } catch (ex) {
                         console.log("Failed drawing next round of the league; ", ex);
                     }
                 }
             } else {
+                console.log(previousRoundMatches)
                 if (previousRoundMatches[0].game.winnerIndex < 0) {
                     // choose by throwing a coin
                     // TODO: or what?
@@ -82,14 +84,17 @@ const first = (mode, contesters) => {
                 // TODO: CHECK what elese should be done when dceclaring the winner
                 // For example sending a
                 // is theis .then .catch work properly?
-                previousRoundMatches[0].players[previousRoundMatches[0].game.winnerIndex].self.points += league.prize;
-                previousRoundMatches[0].players[previousRoundMatches[0].game.winnerIndex].self.save(r => {
-                    console.log(`user:${league.champion} Collected the prize of Leagu:${league._id.toString()}`);
+                const { self: winner } = previousRoundMatches[0].game.players[previousRoundMatches[0].game.winnerIndex];
+                winner.points += league.prize;
+                // TODO: winner.save is ok?
+                // CHECK: is there a nested save method?
+                winner.save(r => {
+                    console.log(`user:${league.champion} Collected the prize of League:${league._id.toString()}`);
                 }).catch(err => {
                     console.log("Sth went wrong when declaring the champion! reason: ", err);
                 });
 
-                league.champion = previousRoundMatches[0].players[previousRoundMatches[0].game.winnerIndex].self;
+                league.champion = winner;
                 league.finished = schedule;
 
                 // TODO: check if .then .catch works correctly!
