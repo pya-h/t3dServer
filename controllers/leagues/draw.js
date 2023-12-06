@@ -46,7 +46,7 @@ const first = (mode, contesters) => {
         return draws;
 
     },
-    next = (league, previousRoundMatches) => {
+    next = async(league, previousRoundMatches) => {
         const schedule = new Date();
         const nextRoundMatches = [];
 
@@ -74,35 +74,37 @@ const first = (mode, contesters) => {
                     }
                 }
             } else {
-                console.log(previousRoundMatches)
                 if (previousRoundMatches[0].game.winnerIndex < 0) {
                     // choose by throwing a coin
                     // TODO: or what?
                     match.game.winnerIndex = +((Math.random() * 10) > 5);
+                    await math.game.save();
                 }
 
                 // TODO: CHECK what elese should be done when dceclaring the winner
                 // For example sending a
                 // is theis .then .catch work properly?
-                const { self: winner } = previousRoundMatches[0].game.players[previousRoundMatches[0].game.winnerIndex];
-                winner.points += league.prize;
-                // TODO: winner.save is ok?
+                const champ = previousRoundMatches[0].players[previousRoundMatches[0].game.winnerIndex];
+                champ.records.points += league.prize;
+                // TODO: champ.self.save is ok?
                 // CHECK: is there a nested save method?
-                winner.save(r => {
-                    console.log(`user:${league.champion} Collected the prize of League:${league._id.toString()}`);
-                }).catch(err => {
+                try {
+                    await champ.save();
+                    console.log(`user:${champ} Collected the prize of League:${league._id.toString()}`);
+                } catch (err) {
                     console.log("Sth went wrong when declaring the champion! reason: ", err);
-                });
-
-                league.champion = winner;
+                }
+                league.champion = champ;
                 league.finished = schedule;
+                console.log(champ);
 
                 // TODO: check if .then .catch works correctly!
-                league.save().then(r => {
+                try {
+                    await league.save();
                     console.log(`League:${league._id.toString()} Champion has been declared: user:${league.champion}`);
-                }).catch(err => {
+                } catch (err) {
                     console.log("Sth went wrong when declaring the champion! reason: ", err);
-                });
+                }
             }
 
         }
