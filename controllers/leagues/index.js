@@ -10,7 +10,7 @@ schedule('4 19 * * *', async() => {
     // runs every day at 04:19 === 4 19 * * *
     try {
         console.log("starting to check leagues!");
-        const leagues = await LeagueModel.find().populate('matches.game').populate('matches.game.players.self');
+        const leagues = await LeagueModel.find().populate('matches.game').populate('matches.players');
         for (const league of leagues) {
             if (!league.finished && league.matches.length) {
                 const recentRound = league.matches[league.currentRound];
@@ -26,7 +26,7 @@ schedule('4 19 * * *', async() => {
                 if (itsTimeForNextRound) {
                     // all that means that the date of the round has passed
                     try {
-                        const nextRoundMatches = draw.next(league, recentRound);
+                        const nextRoundMatches = await draw.next(league, recentRound);
                         if (nextRoundMatches.length) {
                             league.matches.push([...nextRoundMatches]);
                             league.currentRound++;

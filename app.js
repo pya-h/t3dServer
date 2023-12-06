@@ -49,7 +49,7 @@ connectToDB()
     .then((result) => {
         console.log(`Connected To Database`);
         server.listen(Routes.Port, () => {
-            console.log(`Server running on PORT ${Routes.Port}; ${result.toString()}`);
+            console.log(`Server running on PORT: ${Routes.Port}`);
         });
     })
     .catch((err) => {

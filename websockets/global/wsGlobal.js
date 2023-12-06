@@ -14,7 +14,7 @@ var onlines = []; //keys: clientID, values: game type and socket
 
 var t3dRooms = []; //for uuid generate, roomid is used to make ids with less memory consumption
 //this will prevent enterference in gameplay
-const sizeof = require('object-sizeof');
+// const sizeof = require('object-sizeof');
 const authenticate = require("../../middlewares/authenticate");
 
 const createSocketCommand = (command, msg) =>
@@ -69,7 +69,6 @@ const roomid = (uid1, uid2) => //create a room uuid for each game
 const informRoommates = (room, command) => {
     t3dRooms[room.name].players.forEach((cid) => {
         try {
-
             onlines[cid].room = room;
             onlines[cid].socket.send(command);
         } catch (ex) {

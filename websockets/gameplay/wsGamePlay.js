@@ -1,7 +1,7 @@
 const WebSocket = require("ws");
 const T3DLogic = require("./t3dLogic");
 const { getGame, createGame } = require("../../controllers/games");
-const { GameRules } = require('../../configs');
+const { GameRules, StatusCodes } = require('../../configs');
 const authenticate = require("../../middlewares/authenticate");
 const sizeof = require('object-sizeof');
 const { closeThisRoom } = require("../global/wsGlobal");
@@ -129,7 +129,7 @@ const startGame = (rname) => {
     rooms[rname].forceCloseTime = Date.now() + dimension * dimension * dimension * (GameRules.T3D.TurnTimeOut + 5) * 1000; //game force ending time in milisecs
     // + 5 is for considering all time errors
     [playerX, playerO].forEach(each => {
-        each.socket.send(createSocketCommand("START", timer.t0));
+        each.socket && each.socket.send(createSocketCommand("START", timer.t0));
     })
 }
 
@@ -155,6 +155,30 @@ const log_memory_usage = () => {
     const online_size = +(sizeof(Object.keys(rooms)) + sizeof(Object.values(rooms))) / 1024;
     console.log('new game up and running --> allocated memory:' + online_size + 'KB');
     console.log('---------------------------gameplay-scoket-mem-----------------------------\n');
+}
+
+const forceAutoSync = (room, socket, playerID) => {
+
+    const { playerX, playerO, lastMove } = room;
+    // update connections
+    [playerX, playerO].forEach((each, index) => {
+        if (each.id === playerID) {
+            updateClientConnection(room, each, socket, index);
+            return;
+        }
+    });
+
+    //else {
+    // this a third client in the room!
+    // u can set this client in a watcher array if you want to implement live watch
+    //}
+
+    //resend the move to make sure moves are recieved on disconnect/connecting
+    socket.send(createSocketCommand("JOINED_OK"));
+    if (lastMove && lastMove.madeBy !== playerID) {
+        socket.send(
+            createSocketCommand("UPDATE", { newMove: lastMove, t0: room.timer.t0 }));
+    }
 }
 
 module.exports.Server = (path) => {
@@ -203,40 +227,43 @@ module.exports.Server = (path) => {
                         //initiatilize room and players
                         if (gameID && leagueID) {
                             // this code is for league section, to check that the order of players array is the same as [X, O]
-                            (async() => {
-                                try {
-
-                                    // TODO: What if gameID or leagueID differs from the original(first) one?
-                                    // use jwt token for gameID/leagueID?
-                                    if (!rooms[rname].gameID)
-                                        rooms[rname].gameID = gameID;
-                                    if (!rooms[rname].leagueID)
-                                        rooms[rname].leagueID = leagueID;
-
-                                    const game = await getGame(gameID);
-                                    // TOTHINK: User sends a fake gameID?
-                                    if (!game) {
-                                        const error = new Error("No game with this id has been found!");
-                                        error.statusCode = StatusCodes.MatchNotFound;
-                                        throw error;
+                            // TODO: What if gameID or leagueID differs from the original(first) one?
+                            // use jwt token for gameID/leagueID?
+                            if (rooms[rname].gameID === gameID && rooms[rname].leagueID === leagueID && rooms[rname].playerX.id && rooms[rname].playerO.id && (playerID === rooms[rname].playerO.id || playerID === rooms[rname].playerX.id))
+                                forceAutoSync(rooms[rname], socket, playerID);
+                            else {
+                                if (!rooms[rname].gameID)
+                                    rooms[rname].gameID = gameID;
+                                if (!rooms[rname].leagueID)
+                                    rooms[rname].leagueID = leagueID;
+                                (async() => {
+                                    try {
+                                        const game = await getGame(gameID);
+                                        if (!game) {
+                                            const error = new Error("No game with this id has been found!");
+                                            error.statusCode = StatusCodes.MatchNotFound;
+                                            throw error;
+                                        }
+                                        if (game.players[0].self.toString() === playerID.toString()) {
+                                            rooms[rname].playerX = { id: playerID, socket, score: game.players[0].score };
+                                        } else if (game.players[1].self.toString() === playerID.toString()) {
+                                            rooms[rname].playerO = { id: playerID, socket, score: game.players[1].score };
+                                        } else {
+                                            const error = new Error("You are not a player of this match!");
+                                            error.statusCode = StatusCodes.NonOfYourBusinessMatch;
+                                            throw error;
+                                        }
+                                        forceAutoSync(rooms[rname], socket, playerID);
+                                    } catch (err) {
+                                        socket.send(
+                                            createSocketCommand("GAME_ATTEND_FAILURE", {
+                                                reason: err
+                                            })
+                                        )
                                     }
-                                    if (game.players[0].self.toString() === playerID.toString())
-                                        rooms[rname].playerX = { id: playerID, socket, score: game.players[0].score };
-                                    else if (game.players[1].self.toString() === playerID.toString())
-                                        rooms[rname].playerO = { id: playerID, socket, score: game.players[1].score };
-                                    else {
-                                        const error = new Error("You are not a player of this match!");
-                                        error.statusCode = StatusCodes.NonOfYourBusinessMatch;
-                                        throw error;
-                                    }
-                                } catch (err) {
-                                    socket.send(
-                                        createSocketCommand("GAME_ATTEND_FAILURE", {
-                                            reason: err
-                                        })
-                                    );
-                                }
-                            })();
+                                })();
+
+                            }
                         } else {
                             // normal games outside of the leageus
                             // cause: The order of players in normal games is determined by the first attendant
@@ -248,27 +275,10 @@ module.exports.Server = (path) => {
                             } else if (!rooms[rname].playerO.id && playerID !== rooms[rname].playerX.id) {
                                 rooms[rname].playerO = { id: playerID, socket, score: 0 };
                             }
+                            forceAutoSync(rooms[rname], socket, playerID);
+
                         }
 
-                        const { playerX, playerO, lastMove } = rooms[rname];
-                        // update connections
-                        [playerX, playerO].forEach((each, index) => {
-                            if (each.id === playerID) {
-                                updateClientConnection(rooms[rname], each, socket, index);
-                                return;
-                            }
-                        })
-
-                        //else {
-                        // this a third client in the room!
-                        // u can set this client in a watcher array if you want to implement live watch
-                        //}
-
-                        //resend the move to make sure moves are recieved on disconnect/connecting
-                        if (lastMove && lastMove.madeBy !== playerID) {
-                            socket.send(
-                                createSocketCommand("UPDATE", { newMove: lastMove, t0: rooms[rname].timer.t0 }));
-                        }
                     } catch (err) {
                         console.log(err);
                     }
@@ -326,7 +336,7 @@ module.exports.Server = (path) => {
                 } else if (request === "load") {
                     const { table, playerX, playerO, turn, timer, forceCloseTime } = rooms[rname];
 
-                    if (!playerO.id) return; //wait untill both players online
+                    if (!playerO.id || !playerX.id) return; //wait untill both players online
                     if (timer.t0 === -1 || !timer.id)
                         rooms[rname].timer.t0 = Date.now(); //current move start time in ms
 
