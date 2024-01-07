@@ -1,7 +1,8 @@
 # T3D WebServer
 # Language: Node.js
 Backend section of the tic tac toe 3d
-* Server's running on https://mercury-broad-meteor.glitch.me for now.
+This is the local version of t3d server, but a live demo is running on glitch at:
+    https://peat-certain-streetcar.glitch.me for now.
 * Client's running on https://t3d.mehrzadco.com for now.
 
 * Client side repo: https://github.com/pya-h/t3d
