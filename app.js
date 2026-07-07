@@ -9,7 +9,7 @@ const leaguesRoutes = require("./routes/leagues");
 const chatsRoutes = require("./routes/chats");
 const noticesRoutes = require("./routes/notices");
 const { bindSocketsToMainServer } = require("./websockets");
-const { createServer } = require("https");
+const { createServer } = require("http");
 const fs = require('fs');
 const { morganLogger } = require("./middlewares/morganLogger");
 const { Routes } = require("./configs");
@@ -31,13 +31,13 @@ app.use(`/${Routes.Leagues}`, leaguesRoutes);
 app.use(`/${Routes.Notices}`, noticesRoutes);
 app.use(`/${Routes.Chats}`, chatsRoutes);
 
-//---- WebSocket && https
-const options = {
-    key: fs.readFileSync('./configs/key.pem'),
-    cert: fs.readFileSync('./configs/cert.pem')
-};
+// //---- WebSocket && https
+// const options = {
+//     key: fs.readFileSync('./configs/key.pem'),
+//     cert: fs.readFileSync('./configs/cert.pem')
+// };
 
-const server = createServer(options, app);
+const server = createServer(app);
 
 bindSocketsToMainServer(server);
 
